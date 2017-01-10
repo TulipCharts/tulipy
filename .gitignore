@@ -1,0 +1,6 @@
+build/
+*.pyc
+*.so
+src/*.c
+.ipynb_checkpoints/
+
