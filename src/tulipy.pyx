@@ -66,17 +66,14 @@ cdef class _Indicator:
         cdef ti.TI_REAL * c_inputs[ti.TI_MAXINDPARAMS]
         cdef np.ndarray[np.float64_t, ndim=1, mode='c'] input_ref
 
-        cdef int i
         for i in range(self.info.inputs):
             input_ref = inputs[self.info.input_names[i]]
             c_inputs[i] = &input_ref[0]
-        c_inputs[i+1] = NULL
 
         cdef ti.TI_REAL * c_outputs[ti.TI_MAXINDPARAMS]
         cdef np.ndarray[np.float64_t, ndim=2, mode='c'] outputs = np.empty((self.info.outputs, input_len - delta))
         for i in range(self.info.outputs):
             c_outputs[i] = &outputs[i,0]
-        c_outputs[i+1] = NULL
 
         ret = self.info.indicator(input_len, c_inputs, &c_options[0], c_outputs)
         if ret == ti.TI_INVALID_OPTION:
