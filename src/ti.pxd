@@ -1,9 +1,14 @@
+from libc.stdint cimport uint64_t
+
 cdef extern from "indicators.h":
     ctypedef double TI_REAL
 
     ctypedef TI_REAL*  options_t "TI_REAL const *"
     ctypedef TI_REAL** inputs_t  "TI_REAL const * const *"
     ctypedef TI_REAL** outputs_t "TI_REAL * const *"
+
+    cdef const char *   TI_VERSION
+    cdef const uint64_t TI_BUILD
 
     enum: TI_INDICATOR_COUNT # Total number of indicators
 

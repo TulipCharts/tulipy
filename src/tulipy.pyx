@@ -3,6 +3,9 @@ cimport numpy as np
 
 cimport ti
 
+TI_VERSION = ti.TI_VERSION
+TI_BUILD   = ti.TI_BUILD
+
 cdef dict _type_names = {
   ti.TI_TYPE_OVERLAY:     'overlay',
   ti.TI_TYPE_INDICATOR:   'indicator',
