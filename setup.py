@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 from distutils.extension import Extension
 
 import numpy as np
@@ -14,7 +14,14 @@ ext_modules = [
 
 setup(
     name='tulipy',
+    description='Python bindings for https://github.com/TulipCharts/tulipindicators',
+    version=0.1,
+    url='https://github.com/cirla/tulipy',
+    author='Tim Cheeseman <tim@timcheeseman.com>',
+    license='LGPL-3.0',
     cmdclass={'build_ext': build_ext},
     ext_modules=ext_modules,
+    setup_requires=['cython', 'numpy'],
+    requires=['numpy'],
 )
 
