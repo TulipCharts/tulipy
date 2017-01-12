@@ -6,12 +6,15 @@ cimport ti
 TI_VERSION = ti.TI_VERSION
 TI_BUILD   = ti.TI_BUILD
 
+class InvalidOptionError(ValueError):
+    pass
+
 cdef dict _type_names = {
-  ti.TI_TYPE_OVERLAY:     'overlay',
-  ti.TI_TYPE_INDICATOR:   'indicator',
-  ti.TI_TYPE_MATH:        'math',
-  ti.TI_TYPE_SIMPLE:      'simple',
-  ti.TI_TYPE_COMPARATIVE: 'comparative',
+    ti.TI_TYPE_OVERLAY:     'overlay',
+    ti.TI_TYPE_INDICATOR:   'indicator',
+    ti.TI_TYPE_MATH:        'math',
+    ti.TI_TYPE_SIMPLE:      'simple',
+    ti.TI_TYPE_COMPARATIVE: 'comparative',
 }
 
 cdef class _Indicator:
@@ -76,7 +79,8 @@ cdef class _Indicator:
         c_outputs[i+1] = NULL
 
         ret = self.info.indicator(input_len, c_inputs, &c_options[0], c_outputs)
-        assert ret == ti.TI_OKAY
+        if ret == ti.TI_INVALID_OPTION:
+            raise InvalidOptionError()
 
         return {
             self.info.output_names[i]: outputs[i]
