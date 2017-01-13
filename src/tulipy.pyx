@@ -26,8 +26,8 @@ cdef class _Indicator:
     cdef readonly const char * full_name
     cdef readonly const char * type
 
-    def __cinit__(self, const char * name):
-        self.info = ti.ti_find_indicator(name)
+    def __cinit__(self, int index):
+        self.info = ti.ti_indicators + index
         self.name = self.info.name
         self.full_name = self.info.full_name
         self.type = _type_names[self.info.type]
@@ -92,7 +92,7 @@ cdef _init_module():
     for i in range(ti.TI_INDICATOR_COUNT):
         info = ti.ti_indicators[i]
 
-        indicator = _Indicator(info.name)
+        indicator = _Indicator(i)
         globals()[info.name] = indicator
 
 _init_module()
