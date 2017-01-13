@@ -75,6 +75,11 @@ cdef class _Indicator:
         cdef np.ndarray[np.float64_t, ndim=1, mode='c'] c_options = np.array(option_list)
 
         delta = self.info.start(&c_options[0])
+        if min_input_len - delta < 0:
+            # This would cause self.info.indicator to return ti.TI_INVALID_OPTION, but there would
+            # be a problem before we got there in creating the `outputs` np.ndarray below with a
+            # negative dimension
+            raise InvalidOptionError()
 
         cdef ti.TI_REAL * c_inputs[ti.TI_MAXINDPARAMS]
         cdef np.ndarray[np.float64_t, ndim=1, mode='c'] input_ref

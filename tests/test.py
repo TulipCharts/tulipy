@@ -16,10 +16,7 @@ class TestIndicators(unittest.TestCase):
                              86.804]),
         }
 
-        inputs = {'real': CLOSE}
-        options = {'period': 5.0}
-
-        actual = ti.sma(inputs, options)
+        actual = ti.sma(CLOSE, period=5.0)
 
         self.assertIn('sma', actual)
         self.assertTrue(np.allclose(actual['sma'], expected['sma']))
