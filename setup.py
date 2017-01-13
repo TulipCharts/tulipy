@@ -19,7 +19,7 @@ setup(
     ext_modules=ext_modules,
 )
 
-from tulipy_gen import gen
+from tulipy-gen import gen
 with open('src/tulipy.pyx', 'w') as tulipy_pyx:
     gen(tulipy_pyx)
 
