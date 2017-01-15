@@ -1,14 +1,14 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from distutils.extension import Extension
 
 import numpy as np
 from Cython.Distutils import build_ext
 
 ext_modules = [
-    Extension(name='tulipy',
-              sources=['libindicators/tiamalgamation.c', 'src/tulipy.pyx'],
+    Extension(name='tulipy.lib',
+              sources=['libindicators/tiamalgamation.c', 'tulipy/lib/__init__.pyx'],
               language='c',
-              include_dirs=['libindicators', 'src', np.get_include()],
+              include_dirs=['libindicators', 'tulipy/lib', np.get_include()],
     )
 ]
 
@@ -21,7 +21,8 @@ setup(
     license='LGPL-3.0',
     cmdclass={'build_ext': build_ext},
     ext_modules=ext_modules,
-    setup_requires=['cython', 'numpy'],
+    packages=find_packages(exclude=["tests"]),
+    setup_requires=['Cython', 'numpy'],
     requires=['numpy'],
 )
 

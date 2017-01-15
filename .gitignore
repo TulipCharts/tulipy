@@ -4,6 +4,9 @@ venv/
 *.egg-info
 *.pyc
 *.so
-src/*.c
+tulipy/lib/*.c
+gen/*.c
 .ipynb_checkpoints/
+
+*.swp
 

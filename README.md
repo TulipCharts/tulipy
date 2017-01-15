@@ -4,4 +4,163 @@
 
 ## Python bindings for [Tulip Indicators](https://tulipindicators.org/)
 
-See [README.ipynb](https://github.com/cirla/tulipy/blob/master/README.ipynb)
+Tulipy requires [numpy](http://www.numpy.org/) as all inputs and outputs are numpy arrays (`dtype=np.float64`).
+
+
+```python
+import numpy as np
+import tulipy as ti
+```
+
+
+```python
+ti.TI_VERSION
+```
+
+
+
+
+    '0.8.1'
+
+
+
+
+```python
+DATA = np.array([81.59, 81.06, 82.87, 83,    83.61,
+                 83.15, 82.84, 83.99, 84.55, 84.36,
+                 85.53, 86.54, 86.89, 87.77, 87.29])
+```
+
+Information about indicators are exposed as properties:
+
+
+```python
+def print_info(indicator):
+    print "Type:", indicator.type
+    print "Full Name:", indicator.full_name
+    print "Inputs:", indicator.inputs
+    print "Options:", indicator.options
+    print "Outputs:", indicator.outputs
+```
+
+
+```python
+print_info(ti.sqrt)
+```
+
+    Type: simple
+    Full Name: Vector Square Root
+    Inputs: ['real']
+    Options: []
+    Outputs: ['sqrt']
+
+
+All outputs are returned in a dictionary whose keys match those returned from the `outputs` property.
+
+
+```python
+ti.sqrt(DATA)
+```
+
+
+
+
+    {'sqrt': array([ 9.03271831,  9.00333272,  9.10329611,  9.11043358,  9.14385039,
+             9.11866218,  9.1016482 ,  9.16460583,  9.19510739,  9.18477   ,
+             9.24824308,  9.30268778,  9.32148057,  9.36856446,  9.34291175])}
+
+
+
+
+```python
+print_info(ti.sma)
+```
+
+    Type: overlay
+    Full Name: Simple Moving Average
+    Inputs: ['real']
+    Options: ['period']
+    Outputs: ['sma']
+
+
+
+```python
+ti.sma(DATA, period=5.0)
+```
+
+
+
+
+    {'sma': array([ 82.426,  82.738,  83.094,  83.318,  83.628,  83.778,  84.254,
+             84.994,  85.574,  86.218,  86.804])}
+
+
+
+Invalid options will throw an `InvalidOptionError`:
+
+
+```python
+try:
+    ti.sma(DATA, period=-5.0)
+except ti.InvalidOptionError:
+    print "Invalid Option!"
+```
+
+    Invalid Option!
+
+
+
+```python
+print_info(ti.bbands)
+```
+
+    Type: overlay
+    Full Name: Bollinger Bands
+    Inputs: ['real']
+    Options: ['period', 'stddev']
+    Outputs: ['bbands_lower', 'bbands_middle', 'bbands_upper']
+
+
+
+```python
+ti.bbands(DATA, period=5.0, stddev=2.0)
+```
+
+
+
+
+    {'bbands_lower': array([ 80.53004219,  80.98714192,  82.53334324,  82.47198345,
+             82.41775044,  82.43520292,  82.51133078,  83.14261781,
+             83.53648779,  83.8703237 ,  85.28887096]),
+     'bbands_middle': array([ 82.426,  82.738,  83.094,  83.318,  83.628,  83.778,  84.254,
+             84.994,  85.574,  86.218,  86.804]),
+     'bbands_upper': array([ 84.32195781,  84.48885808,  83.65465676,  84.16401655,
+             84.83824956,  85.12079708,  85.99666922,  86.84538219,
+             87.61151221,  88.5656763 ,  88.31912904])}
+
+
+
+If inputs of differing sizes are provided, they are right-aligned and trimmed from the left:
+
+
+```python
+DATA2 = np.array([83.15, 82.84, 83.99, 84.55, 84.36])
+```
+
+
+```python
+# 'high' trimmed to DATA[-5:] == array([ 85.53,  86.54,  86.89,  87.77,  87.29])
+ti.aroonosc(high=DATA, low=DATA2, period=2.0)
+```
+
+
+
+
+    {'aroonosc': array([  50.,  100.,   50.])}
+
+
+
+
+```python
+
+```
