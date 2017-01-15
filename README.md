@@ -8,6 +8,15 @@ Tulipy requires [numpy](http://www.numpy.org/) as all inputs and outputs are num
 
 
 ```python
+# tulipy
+
+## Python bindings for [Tulip Indicators](https://tulipindicators.org/)
+
+Tulipy requires [numpy](http://www.numpy.org/) as all inputs and outputs are numpy arrays (`dtype=np.float64`). 
+```
+
+
+```python
 import numpy as np
 import tulipy as ti
 ```
@@ -53,7 +62,7 @@ print_info(ti.sqrt)
     Inputs: ['real']
     Options: []
     Outputs: ['sqrt']
-
+    
 
 Single outputs are returned directly. Indicators returning multiple outputs use
 a tuple in the order indicated by the `outputs` property.
@@ -66,9 +75,9 @@ ti.sqrt(DATA)
 
 
 
-             array([ 9.03271831,  9.00333272,  9.10329611,  9.11043358,  9.14385039,
-             9.11866218,  9.1016482 ,  9.16460583,  9.19510739,  9.18477   ,
-             9.24824308,  9.30268778,  9.32148057,  9.36856446,  9.34291175])
+    array([ 9.03271831,  9.00333272,  9.10329611,  9.11043358,  9.14385039,
+            9.11866218,  9.1016482 ,  9.16460583,  9.19510739,  9.18477   ,
+            9.24824308,  9.30268778,  9.32148057,  9.36856446,  9.34291175])
 
 
 
@@ -82,7 +91,7 @@ print_info(ti.sma)
     Inputs: ['real']
     Options: ['period']
     Outputs: ['sma']
-
+    
 
 
 ```python
@@ -92,8 +101,8 @@ ti.sma(DATA, period=5.0)
 
 
 
-            array([ 82.426,  82.738,  83.094,  83.318,  83.628,  83.778,  84.254,
-             84.994,  85.574,  86.218,  86.804])
+    array([ 82.426,  82.738,  83.094,  83.318,  83.628,  83.778,  84.254,
+            84.994,  85.574,  86.218,  86.804])
 
 
 
@@ -108,7 +117,7 @@ except ti.InvalidOptionError:
 ```
 
     Invalid Option!
-
+    
 
 
 ```python
@@ -120,7 +129,7 @@ print_info(ti.bbands)
     Inputs: ['real']
     Options: ['period', 'stddev']
     Outputs: ['bbands_lower', 'bbands_middle', 'bbands_upper']
-
+    
 
 
 ```python
@@ -130,12 +139,12 @@ ti.bbands(DATA, period=5.0, stddev=2.0)
 
 
 
-   (array([ 80.53004219,  80.98714192,  82.53334324,  82.47198345,
+    (array([ 80.53004219,  80.98714192,  82.53334324,  82.47198345,
              82.41775044,  82.43520292,  82.51133078,  83.14261781,
              83.53648779,  83.8703237 ,  85.28887096]),
-    array([ 82.426,  82.738,  83.094,  83.318,  83.628,  83.778,  84.254,
+     array([ 82.426,  82.738,  83.094,  83.318,  83.628,  83.778,  84.254,
              84.994,  85.574,  86.218,  86.804]),
-    array([ 84.32195781,  84.48885808,  83.65465676,  84.16401655,
+     array([ 84.32195781,  84.48885808,  83.65465676,  84.16401655,
              84.83824956,  85.12079708,  85.99666922,  86.84538219,
              87.61151221,  88.5656763 ,  88.31912904]))
 
@@ -165,3 +174,4 @@ ti.aroonosc(high=DATA, low=DATA2, period=2.0)
 ```python
 
 ```
+
