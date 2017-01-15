@@ -92,8 +92,8 @@ cdef class _Indicator:
 
         if self.info.outputs == 1:
             return outputs[0]
-        else:
-            return tuple(outputs)
+
+        return tuple(outputs)
 
 
 abs = _Indicator(0)
