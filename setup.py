@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from distutils.extension import Extension
 
 import numpy as np
@@ -21,6 +21,7 @@ setup(
     license='LGPL-3.0',
     cmdclass={'build_ext': build_ext},
     ext_modules=ext_modules,
+    packages=find_packages(exclude=["tests"]),
     setup_requires=['Cython', 'numpy'],
     requires=['numpy'],
 )
