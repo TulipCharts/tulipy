@@ -8,15 +8,6 @@ Tulipy requires [numpy](http://www.numpy.org/) as all inputs and outputs are num
 
 
 ```python
-# tulipy
-
-## Python bindings for [Tulip Indicators](https://tulipindicators.org/)
-
-Tulipy requires [numpy](http://www.numpy.org/) as all inputs and outputs are numpy arrays (`dtype=np.float64`). 
-```
-
-
-```python
 import numpy as np
 import tulipy as ti
 ```
