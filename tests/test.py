@@ -10,16 +10,13 @@ CLOSE = np.array([81.59, 81.06, 82.87, 83,    83.61,
 class TestIndicators(unittest.TestCase):
 
     def test_sma(self):
-        expected = {
-            'sma': np.array([82.426, 82.738, 83.094, 83.318, 83.628,
+        expected = np.array([82.426, 82.738, 83.094, 83.318, 83.628,
                              83.778, 84.254, 84.994, 85.574, 86.218,
                              86.804]),
-        }
 
         actual = ti.sma(CLOSE, period=5.0)
 
-        self.assertIn('sma', actual)
-        self.assertTrue(np.allclose(actual['sma'], expected['sma']))
+        self.assertTrue(np.allclose(actual, expected))
 
 if __name__ == '__main__':
     unittest.main()

@@ -119,10 +119,10 @@ cdef class _Indicator:
         if ret == ti.TI_INVALID_OPTION:
             raise InvalidOptionError()
 
-        return {{
-            self.info.output_names[i]: outputs[i]
-            for i in range(self.info.outputs)
-        }}
+        if self.info.outputs == 1:
+            return outputs[0]
+        else:
+            return tuple(outputs)
 
 {indicators}
 """
