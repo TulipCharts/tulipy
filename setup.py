@@ -2,32 +2,13 @@ from setuptools import setup
 from distutils.extension import Extension
 
 import numpy as np
-from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 
 ext_modules = [
-    Extension(name='tulipy_gen',
-              sources=['libindicators/tiamalgamation.c', 'src/_gen.pyx'],
+    Extension(name='tulipy.lib',
+              sources=['libindicators/tiamalgamation.c', 'tulipy/lib/__init__.pyx'],
               language='c',
-              include_dirs=['libindicators', 'src'],
-    )
-]
-
-setup(
-    name='tulipy_gen',
-    cmdclass={'build_ext': build_ext},
-    ext_modules=ext_modules,
-)
-
-from tulipy-gen import gen
-with open('src/tulipy.pyx', 'w') as tulipy_pyx:
-    gen(tulipy_pyx)
-
-ext_modules = [
-    Extension(name='tulipy',
-              sources=['libindicators/tiamalgamation.c', 'src/tulipy.pyx'],
-              language='c',
-              include_dirs=['libindicators', 'src', np.get_include()],
+              include_dirs=['libindicators', 'tulipy/lib', np.get_include()],
     )
 ]
 
@@ -40,7 +21,7 @@ setup(
     license='LGPL-3.0',
     cmdclass={'build_ext': build_ext},
     ext_modules=ext_modules,
-    setup_requires=['cython', 'numpy'],
+    setup_requires=['Cython', 'numpy'],
     requires=['numpy'],
 )
 
