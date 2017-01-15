@@ -157,7 +157,7 @@ ti.aroonosc(high=DATA, low=DATA2, period=2.0)
 
 
 
-    {'aroonosc': array([  50.,  100.,   50.])}
+    array([  50.,  100.,   50.])
 
 
 
