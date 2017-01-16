@@ -1,7 +1,34 @@
 
+
+# tulipy: Python bindings for Tulip Indicators
+# https://github.com/cirla/tulipy
+# Copyright (c) 2016 tulipy authors
+# https://github.com/cirla/tulipy/blob/master/AUTHORS
+#
+# This file is part of tulipy: Python bindings for Tulip Indicators.
+#
+# tulipy is free software: you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your
+# option) any later version.
+#
+# tulipy is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License
+# for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with tulipy.  If not, see <http://www.gnu.org/licenses/>.
+
+
 # This file is generated. Do not modify directly.
 
-import __builtin__
+# Alias builtins that are shadowed by indicators with the same name
+try: # Python 3
+    from builtins import min as builtin_min
+except ImportError: # Python 2
+    from __builtin__ import min as builtin_min
+
 from libc.limits cimport INT_MAX
 
 import numpy as np
@@ -16,11 +43,11 @@ class InvalidOptionError(ValueError):
     pass
 
 cdef dict _type_names = {
-    ti.TI_TYPE_OVERLAY:     'overlay',
-    ti.TI_TYPE_INDICATOR:   'indicator',
-    ti.TI_TYPE_MATH:        'math',
-    ti.TI_TYPE_SIMPLE:      'simple',
-    ti.TI_TYPE_COMPARATIVE: 'comparative',
+    ti.TI_TYPE_OVERLAY:     b'overlay',
+    ti.TI_TYPE_INDICATOR:   b'indicator',
+    ti.TI_TYPE_MATH:        b'math',
+    ti.TI_TYPE_SIMPLE:      b'simple',
+    ti.TI_TYPE_COMPARATIVE: b'comparative',
 }
 
 cdef class _Indicator:
@@ -62,7 +89,7 @@ cdef class _Indicator:
     def __call__(self, inputs, options):
         cdef int min_input_len = INT_MAX
         for i in range(self.info.inputs):
-            min_input_len = __builtin__.min(min_input_len, inputs[i].shape[0])
+            min_input_len = builtin_min(min_input_len, inputs[i].shape[0])
 
         option_list = options if options else [0.0]
         cdef np.ndarray[np.float64_t, ndim=1, mode='c'] c_options = np.array(option_list, dtype=np.float64)
