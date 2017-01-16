@@ -24,5 +24,17 @@ setup(
     packages=find_packages(exclude=["tests"]),
     setup_requires=['Cython', 'numpy'],
     requires=['numpy'],
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Financial and Insurance Industry',
+        'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
+        'Operating System :: OS Independent',
+        'Programming Language :: Cython',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
+        'Topic :: Office/Business :: Financial',
+        'Topic :: Scientific/Engineering :: Information Analysis',
+    ],
 )
 
