@@ -94,7 +94,7 @@ cdef class _Indicator:
             min_input_len = __builtin__.min(min_input_len, inputs[i].shape[0])
 
         option_list = options if options else [0.0]
-        cdef np.ndarray[np.float64_t, ndim=1, mode='c'] c_options = np.array(option_list)
+        cdef np.ndarray[np.float64_t, ndim=1, mode='c'] c_options = np.array(option_list, dtype=np.float64)
 
         delta = self.info.start(&c_options[0])
         if min_input_len - delta <= 0:

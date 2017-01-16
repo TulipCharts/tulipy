@@ -53,7 +53,7 @@ print_info(ti.sqrt)
     Inputs: ['real']
     Options: []
     Outputs: ['sqrt']
-    
+
 
 Single outputs are returned directly. Indicators returning multiple outputs use
 a tuple in the order indicated by the `outputs` property.
@@ -82,11 +82,11 @@ print_info(ti.sma)
     Inputs: ['real']
     Options: ['period']
     Outputs: ['sma']
-    
+
 
 
 ```python
-ti.sma(DATA, period=5.0)
+ti.sma(DATA, period=5)
 ```
 
 
@@ -102,13 +102,13 @@ Invalid options will throw an `InvalidOptionError`:
 
 ```python
 try:
-    ti.sma(DATA, period=-5.0)
+    ti.sma(DATA, period=-5)
 except ti.InvalidOptionError:
     print "Invalid Option!"
 ```
 
     Invalid Option!
-    
+
 
 
 ```python
@@ -120,11 +120,11 @@ print_info(ti.bbands)
     Inputs: ['real']
     Options: ['period', 'stddev']
     Outputs: ['bbands_lower', 'bbands_middle', 'bbands_upper']
-    
+
 
 
 ```python
-ti.bbands(DATA, period=5.0, stddev=2.0)
+ti.bbands(DATA, period=5, stddev=2)
 ```
 
 
@@ -159,10 +159,4 @@ ti.aroonosc(high=DATA, low=DATA2, period=2.0)
 
     array([  50.,  100.,   50.])
 
-
-
-
-```python
-
-```
 
