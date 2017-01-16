@@ -20,7 +20,7 @@ ti.TI_VERSION
 
 
 
-    '0.8.1'
+    b'0.8.1'
 
 
 
@@ -36,11 +36,11 @@ Information about indicators are exposed as properties:
 
 ```python
 def print_info(indicator):
-    print "Type:", indicator.type
-    print "Full Name:", indicator.full_name
-    print "Inputs:", indicator.inputs
-    print "Options:", indicator.options
-    print "Outputs:", indicator.outputs
+    print("Type:", indicator.type)
+    print("Full Name:", indicator.full_name)
+    print("Inputs:", indicator.inputs)
+    print("Options:", indicator.options)
+    print("Outputs:", indicator.outputs)
 ```
 
 
@@ -48,11 +48,11 @@ def print_info(indicator):
 print_info(ti.sqrt)
 ```
 
-    Type: simple
-    Full Name: Vector Square Root
-    Inputs: ['real']
+    Type: b'simple'
+    Full Name: b'Vector Square Root'
+    Inputs: [b'real']
     Options: []
-    Outputs: ['sqrt']
+    Outputs: [b'sqrt']
 
 
 Single outputs are returned directly. Indicators returning multiple outputs use
@@ -77,11 +77,11 @@ ti.sqrt(DATA)
 print_info(ti.sma)
 ```
 
-    Type: overlay
-    Full Name: Simple Moving Average
-    Inputs: ['real']
-    Options: ['period']
-    Outputs: ['sma']
+    Type: b'overlay'
+    Full Name: b'Simple Moving Average'
+    Inputs: [b'real']
+    Options: [b'period']
+    Outputs: [b'sma']
 
 
 
@@ -104,7 +104,7 @@ Invalid options will throw an `InvalidOptionError`:
 try:
     ti.sma(DATA, period=-5)
 except ti.InvalidOptionError:
-    print "Invalid Option!"
+    print("Invalid Option!")
 ```
 
     Invalid Option!
@@ -115,11 +115,11 @@ except ti.InvalidOptionError:
 print_info(ti.bbands)
 ```
 
-    Type: overlay
-    Full Name: Bollinger Bands
-    Inputs: ['real']
-    Options: ['period', 'stddev']
-    Outputs: ['bbands_lower', 'bbands_middle', 'bbands_upper']
+    Type: b'overlay'
+    Full Name: b'Bollinger Bands'
+    Inputs: [b'real']
+    Options: [b'period', b'stddev']
+    Outputs: [b'bbands_lower', b'bbands_middle', b'bbands_upper']
 
 
 
