@@ -15,14 +15,14 @@ ext_modules = [
 setup(
     name='tulipy',
     description='Python bindings for https://github.com/TulipCharts/tulipindicators',
-    version=0.1,
+    version='0.1.1',
     url='https://github.com/cirla/tulipy',
     author='https://github.com/cirla/tulipy/blob/master/AUTHORS',
     license='LGPL-3.0',
     cmdclass={'build_ext': build_ext},
     ext_modules=ext_modules,
     packages=find_packages(exclude=["tests"]),
-    setup_requires=['Cython', 'numpy'],
+    install_requires=['Cython', 'numpy'],
     requires=['numpy'],
     classifiers=[
         'Development Status :: 4 - Beta',
