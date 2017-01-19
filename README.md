@@ -27,7 +27,7 @@ ti.TI_VERSION
 
 
 
-    b'0.8.1'
+    '0.8.1'
 
 
 
@@ -55,11 +55,11 @@ def print_info(indicator):
 print_info(ti.sqrt)
 ```
 
-    Type: b'simple'
-    Full Name: b'Vector Square Root'
-    Inputs: [b'real']
+    Type: simple
+    Full Name: Vector Square Root
+    Inputs: ['real']
     Options: []
-    Outputs: [b'sqrt']
+    Outputs: ['sqrt']
 
 
 Single outputs are returned directly. Indicators returning multiple outputs use
@@ -84,11 +84,11 @@ ti.sqrt(DATA)
 print_info(ti.sma)
 ```
 
-    Type: b'overlay'
-    Full Name: b'Simple Moving Average'
-    Inputs: [b'real']
-    Options: [b'period']
-    Outputs: [b'sma']
+    Type: overlay
+    Full Name: Simple Moving Average
+    Inputs: ['real']
+    Options: ['period']
+    Outputs: ['sma']
 
 
 
@@ -122,11 +122,11 @@ except ti.InvalidOptionError:
 print_info(ti.bbands)
 ```
 
-    Type: b'overlay'
-    Full Name: b'Bollinger Bands'
-    Inputs: [b'real']
-    Options: [b'period', b'stddev']
-    Outputs: [b'bbands_lower', b'bbands_middle', b'bbands_upper']
+    Type: overlay
+    Full Name: Bollinger Bands
+    Inputs: ['real']
+    Options: ['period', 'stddev']
+    Outputs: ['bbands_lower', 'bbands_middle', 'bbands_upper']
 
 
 

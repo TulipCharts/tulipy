@@ -24,7 +24,9 @@
 # This file is generated. Do not modify directly.
 
 from . import lib
-from .lib import TI_VERSION, TI_BUILD, InvalidOptionError
+from .lib import TI_BUILD, InvalidOptionError
+
+TI_VERSION = lib.TI_VERSION.decode()
 
 
 def abs(real):
@@ -34,11 +36,11 @@ def abs(real):
 
     return lib.abs([real], [])
 
-abs.full_name = lib.abs.full_name
-abs.type = lib.abs.type
-abs.inputs = lib.abs.inputs
-abs.options = lib.abs.options
-abs.outputs = lib.abs.outputs
+abs.full_name = lib.abs.full_name.decode()
+abs.type = lib.abs.type.decode()
+abs.inputs = [x.decode() for x in lib.abs.inputs]
+abs.options = [x.decode() for x in lib.abs.options]
+abs.outputs = [x.decode() for x in lib.abs.outputs]
 
 
 def acos(real):
@@ -48,11 +50,11 @@ def acos(real):
 
     return lib.acos([real], [])
 
-acos.full_name = lib.acos.full_name
-acos.type = lib.acos.type
-acos.inputs = lib.acos.inputs
-acos.options = lib.acos.options
-acos.outputs = lib.acos.outputs
+acos.full_name = lib.acos.full_name.decode()
+acos.type = lib.acos.type.decode()
+acos.inputs = [x.decode() for x in lib.acos.inputs]
+acos.options = [x.decode() for x in lib.acos.options]
+acos.outputs = [x.decode() for x in lib.acos.outputs]
 
 
 def ad(high, low, close, volume):
@@ -62,11 +64,11 @@ def ad(high, low, close, volume):
 
     return lib.ad([high, low, close, volume], [])
 
-ad.full_name = lib.ad.full_name
-ad.type = lib.ad.type
-ad.inputs = lib.ad.inputs
-ad.options = lib.ad.options
-ad.outputs = lib.ad.outputs
+ad.full_name = lib.ad.full_name.decode()
+ad.type = lib.ad.type.decode()
+ad.inputs = [x.decode() for x in lib.ad.inputs]
+ad.options = [x.decode() for x in lib.ad.options]
+ad.outputs = [x.decode() for x in lib.ad.outputs]
 
 
 def add(real, real2):
@@ -76,11 +78,11 @@ def add(real, real2):
 
     return lib.add([real, real2], [])
 
-add.full_name = lib.add.full_name
-add.type = lib.add.type
-add.inputs = lib.add.inputs
-add.options = lib.add.options
-add.outputs = lib.add.outputs
+add.full_name = lib.add.full_name.decode()
+add.type = lib.add.type.decode()
+add.inputs = [x.decode() for x in lib.add.inputs]
+add.options = [x.decode() for x in lib.add.options]
+add.outputs = [x.decode() for x in lib.add.outputs]
 
 
 def adosc(high, low, close, volume, short_period, long_period):
@@ -90,11 +92,11 @@ def adosc(high, low, close, volume, short_period, long_period):
 
     return lib.adosc([high, low, close, volume], [short_period, long_period])
 
-adosc.full_name = lib.adosc.full_name
-adosc.type = lib.adosc.type
-adosc.inputs = lib.adosc.inputs
-adosc.options = lib.adosc.options
-adosc.outputs = lib.adosc.outputs
+adosc.full_name = lib.adosc.full_name.decode()
+adosc.type = lib.adosc.type.decode()
+adosc.inputs = [x.decode() for x in lib.adosc.inputs]
+adosc.options = [x.decode() for x in lib.adosc.options]
+adosc.outputs = [x.decode() for x in lib.adosc.outputs]
 
 
 def adx(high, low, close, period):
@@ -104,11 +106,11 @@ def adx(high, low, close, period):
 
     return lib.adx([high, low, close], [period])
 
-adx.full_name = lib.adx.full_name
-adx.type = lib.adx.type
-adx.inputs = lib.adx.inputs
-adx.options = lib.adx.options
-adx.outputs = lib.adx.outputs
+adx.full_name = lib.adx.full_name.decode()
+adx.type = lib.adx.type.decode()
+adx.inputs = [x.decode() for x in lib.adx.inputs]
+adx.options = [x.decode() for x in lib.adx.options]
+adx.outputs = [x.decode() for x in lib.adx.outputs]
 
 
 def adxr(high, low, close, period):
@@ -118,11 +120,11 @@ def adxr(high, low, close, period):
 
     return lib.adxr([high, low, close], [period])
 
-adxr.full_name = lib.adxr.full_name
-adxr.type = lib.adxr.type
-adxr.inputs = lib.adxr.inputs
-adxr.options = lib.adxr.options
-adxr.outputs = lib.adxr.outputs
+adxr.full_name = lib.adxr.full_name.decode()
+adxr.type = lib.adxr.type.decode()
+adxr.inputs = [x.decode() for x in lib.adxr.inputs]
+adxr.options = [x.decode() for x in lib.adxr.options]
+adxr.outputs = [x.decode() for x in lib.adxr.outputs]
 
 
 def ao(high, low):
@@ -132,11 +134,11 @@ def ao(high, low):
 
     return lib.ao([high, low], [])
 
-ao.full_name = lib.ao.full_name
-ao.type = lib.ao.type
-ao.inputs = lib.ao.inputs
-ao.options = lib.ao.options
-ao.outputs = lib.ao.outputs
+ao.full_name = lib.ao.full_name.decode()
+ao.type = lib.ao.type.decode()
+ao.inputs = [x.decode() for x in lib.ao.inputs]
+ao.options = [x.decode() for x in lib.ao.options]
+ao.outputs = [x.decode() for x in lib.ao.outputs]
 
 
 def apo(real, short_period, long_period):
@@ -146,11 +148,11 @@ def apo(real, short_period, long_period):
 
     return lib.apo([real], [short_period, long_period])
 
-apo.full_name = lib.apo.full_name
-apo.type = lib.apo.type
-apo.inputs = lib.apo.inputs
-apo.options = lib.apo.options
-apo.outputs = lib.apo.outputs
+apo.full_name = lib.apo.full_name.decode()
+apo.type = lib.apo.type.decode()
+apo.inputs = [x.decode() for x in lib.apo.inputs]
+apo.options = [x.decode() for x in lib.apo.options]
+apo.outputs = [x.decode() for x in lib.apo.outputs]
 
 
 def aroon(high, low, period):
@@ -160,11 +162,11 @@ def aroon(high, low, period):
 
     return lib.aroon([high, low], [period])
 
-aroon.full_name = lib.aroon.full_name
-aroon.type = lib.aroon.type
-aroon.inputs = lib.aroon.inputs
-aroon.options = lib.aroon.options
-aroon.outputs = lib.aroon.outputs
+aroon.full_name = lib.aroon.full_name.decode()
+aroon.type = lib.aroon.type.decode()
+aroon.inputs = [x.decode() for x in lib.aroon.inputs]
+aroon.options = [x.decode() for x in lib.aroon.options]
+aroon.outputs = [x.decode() for x in lib.aroon.outputs]
 
 
 def aroonosc(high, low, period):
@@ -174,11 +176,11 @@ def aroonosc(high, low, period):
 
     return lib.aroonosc([high, low], [period])
 
-aroonosc.full_name = lib.aroonosc.full_name
-aroonosc.type = lib.aroonosc.type
-aroonosc.inputs = lib.aroonosc.inputs
-aroonosc.options = lib.aroonosc.options
-aroonosc.outputs = lib.aroonosc.outputs
+aroonosc.full_name = lib.aroonosc.full_name.decode()
+aroonosc.type = lib.aroonosc.type.decode()
+aroonosc.inputs = [x.decode() for x in lib.aroonosc.inputs]
+aroonosc.options = [x.decode() for x in lib.aroonosc.options]
+aroonosc.outputs = [x.decode() for x in lib.aroonosc.outputs]
 
 
 def asin(real):
@@ -188,11 +190,11 @@ def asin(real):
 
     return lib.asin([real], [])
 
-asin.full_name = lib.asin.full_name
-asin.type = lib.asin.type
-asin.inputs = lib.asin.inputs
-asin.options = lib.asin.options
-asin.outputs = lib.asin.outputs
+asin.full_name = lib.asin.full_name.decode()
+asin.type = lib.asin.type.decode()
+asin.inputs = [x.decode() for x in lib.asin.inputs]
+asin.options = [x.decode() for x in lib.asin.options]
+asin.outputs = [x.decode() for x in lib.asin.outputs]
 
 
 def atan(real):
@@ -202,11 +204,11 @@ def atan(real):
 
     return lib.atan([real], [])
 
-atan.full_name = lib.atan.full_name
-atan.type = lib.atan.type
-atan.inputs = lib.atan.inputs
-atan.options = lib.atan.options
-atan.outputs = lib.atan.outputs
+atan.full_name = lib.atan.full_name.decode()
+atan.type = lib.atan.type.decode()
+atan.inputs = [x.decode() for x in lib.atan.inputs]
+atan.options = [x.decode() for x in lib.atan.options]
+atan.outputs = [x.decode() for x in lib.atan.outputs]
 
 
 def atr(high, low, close, period):
@@ -216,11 +218,11 @@ def atr(high, low, close, period):
 
     return lib.atr([high, low, close], [period])
 
-atr.full_name = lib.atr.full_name
-atr.type = lib.atr.type
-atr.inputs = lib.atr.inputs
-atr.options = lib.atr.options
-atr.outputs = lib.atr.outputs
+atr.full_name = lib.atr.full_name.decode()
+atr.type = lib.atr.type.decode()
+atr.inputs = [x.decode() for x in lib.atr.inputs]
+atr.options = [x.decode() for x in lib.atr.options]
+atr.outputs = [x.decode() for x in lib.atr.outputs]
 
 
 def avgprice(open, high, low, close):
@@ -230,11 +232,11 @@ def avgprice(open, high, low, close):
 
     return lib.avgprice([open, high, low, close], [])
 
-avgprice.full_name = lib.avgprice.full_name
-avgprice.type = lib.avgprice.type
-avgprice.inputs = lib.avgprice.inputs
-avgprice.options = lib.avgprice.options
-avgprice.outputs = lib.avgprice.outputs
+avgprice.full_name = lib.avgprice.full_name.decode()
+avgprice.type = lib.avgprice.type.decode()
+avgprice.inputs = [x.decode() for x in lib.avgprice.inputs]
+avgprice.options = [x.decode() for x in lib.avgprice.options]
+avgprice.outputs = [x.decode() for x in lib.avgprice.outputs]
 
 
 def bbands(real, period, stddev):
@@ -244,11 +246,11 @@ def bbands(real, period, stddev):
 
     return lib.bbands([real], [period, stddev])
 
-bbands.full_name = lib.bbands.full_name
-bbands.type = lib.bbands.type
-bbands.inputs = lib.bbands.inputs
-bbands.options = lib.bbands.options
-bbands.outputs = lib.bbands.outputs
+bbands.full_name = lib.bbands.full_name.decode()
+bbands.type = lib.bbands.type.decode()
+bbands.inputs = [x.decode() for x in lib.bbands.inputs]
+bbands.options = [x.decode() for x in lib.bbands.options]
+bbands.outputs = [x.decode() for x in lib.bbands.outputs]
 
 
 def bop(open, high, low, close):
@@ -258,11 +260,11 @@ def bop(open, high, low, close):
 
     return lib.bop([open, high, low, close], [])
 
-bop.full_name = lib.bop.full_name
-bop.type = lib.bop.type
-bop.inputs = lib.bop.inputs
-bop.options = lib.bop.options
-bop.outputs = lib.bop.outputs
+bop.full_name = lib.bop.full_name.decode()
+bop.type = lib.bop.type.decode()
+bop.inputs = [x.decode() for x in lib.bop.inputs]
+bop.options = [x.decode() for x in lib.bop.options]
+bop.outputs = [x.decode() for x in lib.bop.outputs]
 
 
 def cci(high, low, close, period):
@@ -272,11 +274,11 @@ def cci(high, low, close, period):
 
     return lib.cci([high, low, close], [period])
 
-cci.full_name = lib.cci.full_name
-cci.type = lib.cci.type
-cci.inputs = lib.cci.inputs
-cci.options = lib.cci.options
-cci.outputs = lib.cci.outputs
+cci.full_name = lib.cci.full_name.decode()
+cci.type = lib.cci.type.decode()
+cci.inputs = [x.decode() for x in lib.cci.inputs]
+cci.options = [x.decode() for x in lib.cci.options]
+cci.outputs = [x.decode() for x in lib.cci.outputs]
 
 
 def ceil(real):
@@ -286,11 +288,11 @@ def ceil(real):
 
     return lib.ceil([real], [])
 
-ceil.full_name = lib.ceil.full_name
-ceil.type = lib.ceil.type
-ceil.inputs = lib.ceil.inputs
-ceil.options = lib.ceil.options
-ceil.outputs = lib.ceil.outputs
+ceil.full_name = lib.ceil.full_name.decode()
+ceil.type = lib.ceil.type.decode()
+ceil.inputs = [x.decode() for x in lib.ceil.inputs]
+ceil.options = [x.decode() for x in lib.ceil.options]
+ceil.outputs = [x.decode() for x in lib.ceil.outputs]
 
 
 def cmo(real, period):
@@ -300,11 +302,11 @@ def cmo(real, period):
 
     return lib.cmo([real], [period])
 
-cmo.full_name = lib.cmo.full_name
-cmo.type = lib.cmo.type
-cmo.inputs = lib.cmo.inputs
-cmo.options = lib.cmo.options
-cmo.outputs = lib.cmo.outputs
+cmo.full_name = lib.cmo.full_name.decode()
+cmo.type = lib.cmo.type.decode()
+cmo.inputs = [x.decode() for x in lib.cmo.inputs]
+cmo.options = [x.decode() for x in lib.cmo.options]
+cmo.outputs = [x.decode() for x in lib.cmo.outputs]
 
 
 def cos(real):
@@ -314,11 +316,11 @@ def cos(real):
 
     return lib.cos([real], [])
 
-cos.full_name = lib.cos.full_name
-cos.type = lib.cos.type
-cos.inputs = lib.cos.inputs
-cos.options = lib.cos.options
-cos.outputs = lib.cos.outputs
+cos.full_name = lib.cos.full_name.decode()
+cos.type = lib.cos.type.decode()
+cos.inputs = [x.decode() for x in lib.cos.inputs]
+cos.options = [x.decode() for x in lib.cos.options]
+cos.outputs = [x.decode() for x in lib.cos.outputs]
 
 
 def cosh(real):
@@ -328,11 +330,11 @@ def cosh(real):
 
     return lib.cosh([real], [])
 
-cosh.full_name = lib.cosh.full_name
-cosh.type = lib.cosh.type
-cosh.inputs = lib.cosh.inputs
-cosh.options = lib.cosh.options
-cosh.outputs = lib.cosh.outputs
+cosh.full_name = lib.cosh.full_name.decode()
+cosh.type = lib.cosh.type.decode()
+cosh.inputs = [x.decode() for x in lib.cosh.inputs]
+cosh.options = [x.decode() for x in lib.cosh.options]
+cosh.outputs = [x.decode() for x in lib.cosh.outputs]
 
 
 def crossany(real, real2):
@@ -342,11 +344,11 @@ def crossany(real, real2):
 
     return lib.crossany([real, real2], [])
 
-crossany.full_name = lib.crossany.full_name
-crossany.type = lib.crossany.type
-crossany.inputs = lib.crossany.inputs
-crossany.options = lib.crossany.options
-crossany.outputs = lib.crossany.outputs
+crossany.full_name = lib.crossany.full_name.decode()
+crossany.type = lib.crossany.type.decode()
+crossany.inputs = [x.decode() for x in lib.crossany.inputs]
+crossany.options = [x.decode() for x in lib.crossany.options]
+crossany.outputs = [x.decode() for x in lib.crossany.outputs]
 
 
 def crossover(real, real2):
@@ -356,11 +358,11 @@ def crossover(real, real2):
 
     return lib.crossover([real, real2], [])
 
-crossover.full_name = lib.crossover.full_name
-crossover.type = lib.crossover.type
-crossover.inputs = lib.crossover.inputs
-crossover.options = lib.crossover.options
-crossover.outputs = lib.crossover.outputs
+crossover.full_name = lib.crossover.full_name.decode()
+crossover.type = lib.crossover.type.decode()
+crossover.inputs = [x.decode() for x in lib.crossover.inputs]
+crossover.options = [x.decode() for x in lib.crossover.options]
+crossover.outputs = [x.decode() for x in lib.crossover.outputs]
 
 
 def cvi(high, low, period):
@@ -370,11 +372,11 @@ def cvi(high, low, period):
 
     return lib.cvi([high, low], [period])
 
-cvi.full_name = lib.cvi.full_name
-cvi.type = lib.cvi.type
-cvi.inputs = lib.cvi.inputs
-cvi.options = lib.cvi.options
-cvi.outputs = lib.cvi.outputs
+cvi.full_name = lib.cvi.full_name.decode()
+cvi.type = lib.cvi.type.decode()
+cvi.inputs = [x.decode() for x in lib.cvi.inputs]
+cvi.options = [x.decode() for x in lib.cvi.options]
+cvi.outputs = [x.decode() for x in lib.cvi.outputs]
 
 
 def decay(real, period):
@@ -384,11 +386,11 @@ def decay(real, period):
 
     return lib.decay([real], [period])
 
-decay.full_name = lib.decay.full_name
-decay.type = lib.decay.type
-decay.inputs = lib.decay.inputs
-decay.options = lib.decay.options
-decay.outputs = lib.decay.outputs
+decay.full_name = lib.decay.full_name.decode()
+decay.type = lib.decay.type.decode()
+decay.inputs = [x.decode() for x in lib.decay.inputs]
+decay.options = [x.decode() for x in lib.decay.options]
+decay.outputs = [x.decode() for x in lib.decay.outputs]
 
 
 def dema(real, period):
@@ -398,11 +400,11 @@ def dema(real, period):
 
     return lib.dema([real], [period])
 
-dema.full_name = lib.dema.full_name
-dema.type = lib.dema.type
-dema.inputs = lib.dema.inputs
-dema.options = lib.dema.options
-dema.outputs = lib.dema.outputs
+dema.full_name = lib.dema.full_name.decode()
+dema.type = lib.dema.type.decode()
+dema.inputs = [x.decode() for x in lib.dema.inputs]
+dema.options = [x.decode() for x in lib.dema.options]
+dema.outputs = [x.decode() for x in lib.dema.outputs]
 
 
 def di(high, low, close, period):
@@ -412,11 +414,11 @@ def di(high, low, close, period):
 
     return lib.di([high, low, close], [period])
 
-di.full_name = lib.di.full_name
-di.type = lib.di.type
-di.inputs = lib.di.inputs
-di.options = lib.di.options
-di.outputs = lib.di.outputs
+di.full_name = lib.di.full_name.decode()
+di.type = lib.di.type.decode()
+di.inputs = [x.decode() for x in lib.di.inputs]
+di.options = [x.decode() for x in lib.di.options]
+di.outputs = [x.decode() for x in lib.di.outputs]
 
 
 def div(real, real2):
@@ -426,11 +428,11 @@ def div(real, real2):
 
     return lib.div([real, real2], [])
 
-div.full_name = lib.div.full_name
-div.type = lib.div.type
-div.inputs = lib.div.inputs
-div.options = lib.div.options
-div.outputs = lib.div.outputs
+div.full_name = lib.div.full_name.decode()
+div.type = lib.div.type.decode()
+div.inputs = [x.decode() for x in lib.div.inputs]
+div.options = [x.decode() for x in lib.div.options]
+div.outputs = [x.decode() for x in lib.div.outputs]
 
 
 def dm(high, low, period):
@@ -440,11 +442,11 @@ def dm(high, low, period):
 
     return lib.dm([high, low], [period])
 
-dm.full_name = lib.dm.full_name
-dm.type = lib.dm.type
-dm.inputs = lib.dm.inputs
-dm.options = lib.dm.options
-dm.outputs = lib.dm.outputs
+dm.full_name = lib.dm.full_name.decode()
+dm.type = lib.dm.type.decode()
+dm.inputs = [x.decode() for x in lib.dm.inputs]
+dm.options = [x.decode() for x in lib.dm.options]
+dm.outputs = [x.decode() for x in lib.dm.outputs]
 
 
 def dpo(real, period):
@@ -454,11 +456,11 @@ def dpo(real, period):
 
     return lib.dpo([real], [period])
 
-dpo.full_name = lib.dpo.full_name
-dpo.type = lib.dpo.type
-dpo.inputs = lib.dpo.inputs
-dpo.options = lib.dpo.options
-dpo.outputs = lib.dpo.outputs
+dpo.full_name = lib.dpo.full_name.decode()
+dpo.type = lib.dpo.type.decode()
+dpo.inputs = [x.decode() for x in lib.dpo.inputs]
+dpo.options = [x.decode() for x in lib.dpo.options]
+dpo.outputs = [x.decode() for x in lib.dpo.outputs]
 
 
 def dx(high, low, close, period):
@@ -468,11 +470,11 @@ def dx(high, low, close, period):
 
     return lib.dx([high, low, close], [period])
 
-dx.full_name = lib.dx.full_name
-dx.type = lib.dx.type
-dx.inputs = lib.dx.inputs
-dx.options = lib.dx.options
-dx.outputs = lib.dx.outputs
+dx.full_name = lib.dx.full_name.decode()
+dx.type = lib.dx.type.decode()
+dx.inputs = [x.decode() for x in lib.dx.inputs]
+dx.options = [x.decode() for x in lib.dx.options]
+dx.outputs = [x.decode() for x in lib.dx.outputs]
 
 
 def edecay(real, period):
@@ -482,11 +484,11 @@ def edecay(real, period):
 
     return lib.edecay([real], [period])
 
-edecay.full_name = lib.edecay.full_name
-edecay.type = lib.edecay.type
-edecay.inputs = lib.edecay.inputs
-edecay.options = lib.edecay.options
-edecay.outputs = lib.edecay.outputs
+edecay.full_name = lib.edecay.full_name.decode()
+edecay.type = lib.edecay.type.decode()
+edecay.inputs = [x.decode() for x in lib.edecay.inputs]
+edecay.options = [x.decode() for x in lib.edecay.options]
+edecay.outputs = [x.decode() for x in lib.edecay.outputs]
 
 
 def ema(real, period):
@@ -496,11 +498,11 @@ def ema(real, period):
 
     return lib.ema([real], [period])
 
-ema.full_name = lib.ema.full_name
-ema.type = lib.ema.type
-ema.inputs = lib.ema.inputs
-ema.options = lib.ema.options
-ema.outputs = lib.ema.outputs
+ema.full_name = lib.ema.full_name.decode()
+ema.type = lib.ema.type.decode()
+ema.inputs = [x.decode() for x in lib.ema.inputs]
+ema.options = [x.decode() for x in lib.ema.options]
+ema.outputs = [x.decode() for x in lib.ema.outputs]
 
 
 def emv(high, low, volume):
@@ -510,11 +512,11 @@ def emv(high, low, volume):
 
     return lib.emv([high, low, volume], [])
 
-emv.full_name = lib.emv.full_name
-emv.type = lib.emv.type
-emv.inputs = lib.emv.inputs
-emv.options = lib.emv.options
-emv.outputs = lib.emv.outputs
+emv.full_name = lib.emv.full_name.decode()
+emv.type = lib.emv.type.decode()
+emv.inputs = [x.decode() for x in lib.emv.inputs]
+emv.options = [x.decode() for x in lib.emv.options]
+emv.outputs = [x.decode() for x in lib.emv.outputs]
 
 
 def exp(real):
@@ -524,11 +526,11 @@ def exp(real):
 
     return lib.exp([real], [])
 
-exp.full_name = lib.exp.full_name
-exp.type = lib.exp.type
-exp.inputs = lib.exp.inputs
-exp.options = lib.exp.options
-exp.outputs = lib.exp.outputs
+exp.full_name = lib.exp.full_name.decode()
+exp.type = lib.exp.type.decode()
+exp.inputs = [x.decode() for x in lib.exp.inputs]
+exp.options = [x.decode() for x in lib.exp.options]
+exp.outputs = [x.decode() for x in lib.exp.outputs]
 
 
 def fisher(high, low, period):
@@ -538,11 +540,11 @@ def fisher(high, low, period):
 
     return lib.fisher([high, low], [period])
 
-fisher.full_name = lib.fisher.full_name
-fisher.type = lib.fisher.type
-fisher.inputs = lib.fisher.inputs
-fisher.options = lib.fisher.options
-fisher.outputs = lib.fisher.outputs
+fisher.full_name = lib.fisher.full_name.decode()
+fisher.type = lib.fisher.type.decode()
+fisher.inputs = [x.decode() for x in lib.fisher.inputs]
+fisher.options = [x.decode() for x in lib.fisher.options]
+fisher.outputs = [x.decode() for x in lib.fisher.outputs]
 
 
 def floor(real):
@@ -552,11 +554,11 @@ def floor(real):
 
     return lib.floor([real], [])
 
-floor.full_name = lib.floor.full_name
-floor.type = lib.floor.type
-floor.inputs = lib.floor.inputs
-floor.options = lib.floor.options
-floor.outputs = lib.floor.outputs
+floor.full_name = lib.floor.full_name.decode()
+floor.type = lib.floor.type.decode()
+floor.inputs = [x.decode() for x in lib.floor.inputs]
+floor.options = [x.decode() for x in lib.floor.options]
+floor.outputs = [x.decode() for x in lib.floor.outputs]
 
 
 def fosc(real, period):
@@ -566,11 +568,11 @@ def fosc(real, period):
 
     return lib.fosc([real], [period])
 
-fosc.full_name = lib.fosc.full_name
-fosc.type = lib.fosc.type
-fosc.inputs = lib.fosc.inputs
-fosc.options = lib.fosc.options
-fosc.outputs = lib.fosc.outputs
+fosc.full_name = lib.fosc.full_name.decode()
+fosc.type = lib.fosc.type.decode()
+fosc.inputs = [x.decode() for x in lib.fosc.inputs]
+fosc.options = [x.decode() for x in lib.fosc.options]
+fosc.outputs = [x.decode() for x in lib.fosc.outputs]
 
 
 def hma(real, period):
@@ -580,11 +582,11 @@ def hma(real, period):
 
     return lib.hma([real], [period])
 
-hma.full_name = lib.hma.full_name
-hma.type = lib.hma.type
-hma.inputs = lib.hma.inputs
-hma.options = lib.hma.options
-hma.outputs = lib.hma.outputs
+hma.full_name = lib.hma.full_name.decode()
+hma.type = lib.hma.type.decode()
+hma.inputs = [x.decode() for x in lib.hma.inputs]
+hma.options = [x.decode() for x in lib.hma.options]
+hma.outputs = [x.decode() for x in lib.hma.outputs]
 
 
 def kama(real, period):
@@ -594,11 +596,11 @@ def kama(real, period):
 
     return lib.kama([real], [period])
 
-kama.full_name = lib.kama.full_name
-kama.type = lib.kama.type
-kama.inputs = lib.kama.inputs
-kama.options = lib.kama.options
-kama.outputs = lib.kama.outputs
+kama.full_name = lib.kama.full_name.decode()
+kama.type = lib.kama.type.decode()
+kama.inputs = [x.decode() for x in lib.kama.inputs]
+kama.options = [x.decode() for x in lib.kama.options]
+kama.outputs = [x.decode() for x in lib.kama.outputs]
 
 
 def kvo(high, low, close, volume, short_period, long_period):
@@ -608,11 +610,11 @@ def kvo(high, low, close, volume, short_period, long_period):
 
     return lib.kvo([high, low, close, volume], [short_period, long_period])
 
-kvo.full_name = lib.kvo.full_name
-kvo.type = lib.kvo.type
-kvo.inputs = lib.kvo.inputs
-kvo.options = lib.kvo.options
-kvo.outputs = lib.kvo.outputs
+kvo.full_name = lib.kvo.full_name.decode()
+kvo.type = lib.kvo.type.decode()
+kvo.inputs = [x.decode() for x in lib.kvo.inputs]
+kvo.options = [x.decode() for x in lib.kvo.options]
+kvo.outputs = [x.decode() for x in lib.kvo.outputs]
 
 
 def lag(real, period):
@@ -622,11 +624,11 @@ def lag(real, period):
 
     return lib.lag([real], [period])
 
-lag.full_name = lib.lag.full_name
-lag.type = lib.lag.type
-lag.inputs = lib.lag.inputs
-lag.options = lib.lag.options
-lag.outputs = lib.lag.outputs
+lag.full_name = lib.lag.full_name.decode()
+lag.type = lib.lag.type.decode()
+lag.inputs = [x.decode() for x in lib.lag.inputs]
+lag.options = [x.decode() for x in lib.lag.options]
+lag.outputs = [x.decode() for x in lib.lag.outputs]
 
 
 def linreg(real, period):
@@ -636,11 +638,11 @@ def linreg(real, period):
 
     return lib.linreg([real], [period])
 
-linreg.full_name = lib.linreg.full_name
-linreg.type = lib.linreg.type
-linreg.inputs = lib.linreg.inputs
-linreg.options = lib.linreg.options
-linreg.outputs = lib.linreg.outputs
+linreg.full_name = lib.linreg.full_name.decode()
+linreg.type = lib.linreg.type.decode()
+linreg.inputs = [x.decode() for x in lib.linreg.inputs]
+linreg.options = [x.decode() for x in lib.linreg.options]
+linreg.outputs = [x.decode() for x in lib.linreg.outputs]
 
 
 def linregintercept(real, period):
@@ -650,11 +652,11 @@ def linregintercept(real, period):
 
     return lib.linregintercept([real], [period])
 
-linregintercept.full_name = lib.linregintercept.full_name
-linregintercept.type = lib.linregintercept.type
-linregintercept.inputs = lib.linregintercept.inputs
-linregintercept.options = lib.linregintercept.options
-linregintercept.outputs = lib.linregintercept.outputs
+linregintercept.full_name = lib.linregintercept.full_name.decode()
+linregintercept.type = lib.linregintercept.type.decode()
+linregintercept.inputs = [x.decode() for x in lib.linregintercept.inputs]
+linregintercept.options = [x.decode() for x in lib.linregintercept.options]
+linregintercept.outputs = [x.decode() for x in lib.linregintercept.outputs]
 
 
 def linregslope(real, period):
@@ -664,11 +666,11 @@ def linregslope(real, period):
 
     return lib.linregslope([real], [period])
 
-linregslope.full_name = lib.linregslope.full_name
-linregslope.type = lib.linregslope.type
-linregslope.inputs = lib.linregslope.inputs
-linregslope.options = lib.linregslope.options
-linregslope.outputs = lib.linregslope.outputs
+linregslope.full_name = lib.linregslope.full_name.decode()
+linregslope.type = lib.linregslope.type.decode()
+linregslope.inputs = [x.decode() for x in lib.linregslope.inputs]
+linregslope.options = [x.decode() for x in lib.linregslope.options]
+linregslope.outputs = [x.decode() for x in lib.linregslope.outputs]
 
 
 def ln(real):
@@ -678,11 +680,11 @@ def ln(real):
 
     return lib.ln([real], [])
 
-ln.full_name = lib.ln.full_name
-ln.type = lib.ln.type
-ln.inputs = lib.ln.inputs
-ln.options = lib.ln.options
-ln.outputs = lib.ln.outputs
+ln.full_name = lib.ln.full_name.decode()
+ln.type = lib.ln.type.decode()
+ln.inputs = [x.decode() for x in lib.ln.inputs]
+ln.options = [x.decode() for x in lib.ln.options]
+ln.outputs = [x.decode() for x in lib.ln.outputs]
 
 
 def log10(real):
@@ -692,11 +694,11 @@ def log10(real):
 
     return lib.log10([real], [])
 
-log10.full_name = lib.log10.full_name
-log10.type = lib.log10.type
-log10.inputs = lib.log10.inputs
-log10.options = lib.log10.options
-log10.outputs = lib.log10.outputs
+log10.full_name = lib.log10.full_name.decode()
+log10.type = lib.log10.type.decode()
+log10.inputs = [x.decode() for x in lib.log10.inputs]
+log10.options = [x.decode() for x in lib.log10.options]
+log10.outputs = [x.decode() for x in lib.log10.outputs]
 
 
 def macd(real, short_period, long_period, signal_period):
@@ -706,11 +708,11 @@ def macd(real, short_period, long_period, signal_period):
 
     return lib.macd([real], [short_period, long_period, signal_period])
 
-macd.full_name = lib.macd.full_name
-macd.type = lib.macd.type
-macd.inputs = lib.macd.inputs
-macd.options = lib.macd.options
-macd.outputs = lib.macd.outputs
+macd.full_name = lib.macd.full_name.decode()
+macd.type = lib.macd.type.decode()
+macd.inputs = [x.decode() for x in lib.macd.inputs]
+macd.options = [x.decode() for x in lib.macd.options]
+macd.outputs = [x.decode() for x in lib.macd.outputs]
 
 
 def marketfi(high, low, volume):
@@ -720,11 +722,11 @@ def marketfi(high, low, volume):
 
     return lib.marketfi([high, low, volume], [])
 
-marketfi.full_name = lib.marketfi.full_name
-marketfi.type = lib.marketfi.type
-marketfi.inputs = lib.marketfi.inputs
-marketfi.options = lib.marketfi.options
-marketfi.outputs = lib.marketfi.outputs
+marketfi.full_name = lib.marketfi.full_name.decode()
+marketfi.type = lib.marketfi.type.decode()
+marketfi.inputs = [x.decode() for x in lib.marketfi.inputs]
+marketfi.options = [x.decode() for x in lib.marketfi.options]
+marketfi.outputs = [x.decode() for x in lib.marketfi.outputs]
 
 
 def mass(high, low, period):
@@ -734,11 +736,11 @@ def mass(high, low, period):
 
     return lib.mass([high, low], [period])
 
-mass.full_name = lib.mass.full_name
-mass.type = lib.mass.type
-mass.inputs = lib.mass.inputs
-mass.options = lib.mass.options
-mass.outputs = lib.mass.outputs
+mass.full_name = lib.mass.full_name.decode()
+mass.type = lib.mass.type.decode()
+mass.inputs = [x.decode() for x in lib.mass.inputs]
+mass.options = [x.decode() for x in lib.mass.options]
+mass.outputs = [x.decode() for x in lib.mass.outputs]
 
 
 def max(real, period):
@@ -748,11 +750,11 @@ def max(real, period):
 
     return lib.max([real], [period])
 
-max.full_name = lib.max.full_name
-max.type = lib.max.type
-max.inputs = lib.max.inputs
-max.options = lib.max.options
-max.outputs = lib.max.outputs
+max.full_name = lib.max.full_name.decode()
+max.type = lib.max.type.decode()
+max.inputs = [x.decode() for x in lib.max.inputs]
+max.options = [x.decode() for x in lib.max.options]
+max.outputs = [x.decode() for x in lib.max.outputs]
 
 
 def md(real, period):
@@ -762,11 +764,11 @@ def md(real, period):
 
     return lib.md([real], [period])
 
-md.full_name = lib.md.full_name
-md.type = lib.md.type
-md.inputs = lib.md.inputs
-md.options = lib.md.options
-md.outputs = lib.md.outputs
+md.full_name = lib.md.full_name.decode()
+md.type = lib.md.type.decode()
+md.inputs = [x.decode() for x in lib.md.inputs]
+md.options = [x.decode() for x in lib.md.options]
+md.outputs = [x.decode() for x in lib.md.outputs]
 
 
 def medprice(high, low):
@@ -776,11 +778,11 @@ def medprice(high, low):
 
     return lib.medprice([high, low], [])
 
-medprice.full_name = lib.medprice.full_name
-medprice.type = lib.medprice.type
-medprice.inputs = lib.medprice.inputs
-medprice.options = lib.medprice.options
-medprice.outputs = lib.medprice.outputs
+medprice.full_name = lib.medprice.full_name.decode()
+medprice.type = lib.medprice.type.decode()
+medprice.inputs = [x.decode() for x in lib.medprice.inputs]
+medprice.options = [x.decode() for x in lib.medprice.options]
+medprice.outputs = [x.decode() for x in lib.medprice.outputs]
 
 
 def mfi(high, low, close, volume, period):
@@ -790,11 +792,11 @@ def mfi(high, low, close, volume, period):
 
     return lib.mfi([high, low, close, volume], [period])
 
-mfi.full_name = lib.mfi.full_name
-mfi.type = lib.mfi.type
-mfi.inputs = lib.mfi.inputs
-mfi.options = lib.mfi.options
-mfi.outputs = lib.mfi.outputs
+mfi.full_name = lib.mfi.full_name.decode()
+mfi.type = lib.mfi.type.decode()
+mfi.inputs = [x.decode() for x in lib.mfi.inputs]
+mfi.options = [x.decode() for x in lib.mfi.options]
+mfi.outputs = [x.decode() for x in lib.mfi.outputs]
 
 
 def min(real, period):
@@ -804,11 +806,11 @@ def min(real, period):
 
     return lib.min([real], [period])
 
-min.full_name = lib.min.full_name
-min.type = lib.min.type
-min.inputs = lib.min.inputs
-min.options = lib.min.options
-min.outputs = lib.min.outputs
+min.full_name = lib.min.full_name.decode()
+min.type = lib.min.type.decode()
+min.inputs = [x.decode() for x in lib.min.inputs]
+min.options = [x.decode() for x in lib.min.options]
+min.outputs = [x.decode() for x in lib.min.outputs]
 
 
 def mom(real, period):
@@ -818,11 +820,11 @@ def mom(real, period):
 
     return lib.mom([real], [period])
 
-mom.full_name = lib.mom.full_name
-mom.type = lib.mom.type
-mom.inputs = lib.mom.inputs
-mom.options = lib.mom.options
-mom.outputs = lib.mom.outputs
+mom.full_name = lib.mom.full_name.decode()
+mom.type = lib.mom.type.decode()
+mom.inputs = [x.decode() for x in lib.mom.inputs]
+mom.options = [x.decode() for x in lib.mom.options]
+mom.outputs = [x.decode() for x in lib.mom.outputs]
 
 
 def msw(real, period):
@@ -832,11 +834,11 @@ def msw(real, period):
 
     return lib.msw([real], [period])
 
-msw.full_name = lib.msw.full_name
-msw.type = lib.msw.type
-msw.inputs = lib.msw.inputs
-msw.options = lib.msw.options
-msw.outputs = lib.msw.outputs
+msw.full_name = lib.msw.full_name.decode()
+msw.type = lib.msw.type.decode()
+msw.inputs = [x.decode() for x in lib.msw.inputs]
+msw.options = [x.decode() for x in lib.msw.options]
+msw.outputs = [x.decode() for x in lib.msw.outputs]
 
 
 def mul(real, real2):
@@ -846,11 +848,11 @@ def mul(real, real2):
 
     return lib.mul([real, real2], [])
 
-mul.full_name = lib.mul.full_name
-mul.type = lib.mul.type
-mul.inputs = lib.mul.inputs
-mul.options = lib.mul.options
-mul.outputs = lib.mul.outputs
+mul.full_name = lib.mul.full_name.decode()
+mul.type = lib.mul.type.decode()
+mul.inputs = [x.decode() for x in lib.mul.inputs]
+mul.options = [x.decode() for x in lib.mul.options]
+mul.outputs = [x.decode() for x in lib.mul.outputs]
 
 
 def natr(high, low, close, period):
@@ -860,11 +862,11 @@ def natr(high, low, close, period):
 
     return lib.natr([high, low, close], [period])
 
-natr.full_name = lib.natr.full_name
-natr.type = lib.natr.type
-natr.inputs = lib.natr.inputs
-natr.options = lib.natr.options
-natr.outputs = lib.natr.outputs
+natr.full_name = lib.natr.full_name.decode()
+natr.type = lib.natr.type.decode()
+natr.inputs = [x.decode() for x in lib.natr.inputs]
+natr.options = [x.decode() for x in lib.natr.options]
+natr.outputs = [x.decode() for x in lib.natr.outputs]
 
 
 def nvi(close, volume):
@@ -874,11 +876,11 @@ def nvi(close, volume):
 
     return lib.nvi([close, volume], [])
 
-nvi.full_name = lib.nvi.full_name
-nvi.type = lib.nvi.type
-nvi.inputs = lib.nvi.inputs
-nvi.options = lib.nvi.options
-nvi.outputs = lib.nvi.outputs
+nvi.full_name = lib.nvi.full_name.decode()
+nvi.type = lib.nvi.type.decode()
+nvi.inputs = [x.decode() for x in lib.nvi.inputs]
+nvi.options = [x.decode() for x in lib.nvi.options]
+nvi.outputs = [x.decode() for x in lib.nvi.outputs]
 
 
 def obv(close, volume):
@@ -888,11 +890,11 @@ def obv(close, volume):
 
     return lib.obv([close, volume], [])
 
-obv.full_name = lib.obv.full_name
-obv.type = lib.obv.type
-obv.inputs = lib.obv.inputs
-obv.options = lib.obv.options
-obv.outputs = lib.obv.outputs
+obv.full_name = lib.obv.full_name.decode()
+obv.type = lib.obv.type.decode()
+obv.inputs = [x.decode() for x in lib.obv.inputs]
+obv.options = [x.decode() for x in lib.obv.options]
+obv.outputs = [x.decode() for x in lib.obv.outputs]
 
 
 def ppo(real, short_period, long_period):
@@ -902,11 +904,11 @@ def ppo(real, short_period, long_period):
 
     return lib.ppo([real], [short_period, long_period])
 
-ppo.full_name = lib.ppo.full_name
-ppo.type = lib.ppo.type
-ppo.inputs = lib.ppo.inputs
-ppo.options = lib.ppo.options
-ppo.outputs = lib.ppo.outputs
+ppo.full_name = lib.ppo.full_name.decode()
+ppo.type = lib.ppo.type.decode()
+ppo.inputs = [x.decode() for x in lib.ppo.inputs]
+ppo.options = [x.decode() for x in lib.ppo.options]
+ppo.outputs = [x.decode() for x in lib.ppo.outputs]
 
 
 def psar(high, low, acceleration_factor_step, acceleration_factor_maximum):
@@ -916,11 +918,11 @@ def psar(high, low, acceleration_factor_step, acceleration_factor_maximum):
 
     return lib.psar([high, low], [acceleration_factor_step, acceleration_factor_maximum])
 
-psar.full_name = lib.psar.full_name
-psar.type = lib.psar.type
-psar.inputs = lib.psar.inputs
-psar.options = lib.psar.options
-psar.outputs = lib.psar.outputs
+psar.full_name = lib.psar.full_name.decode()
+psar.type = lib.psar.type.decode()
+psar.inputs = [x.decode() for x in lib.psar.inputs]
+psar.options = [x.decode() for x in lib.psar.options]
+psar.outputs = [x.decode() for x in lib.psar.outputs]
 
 
 def pvi(close, volume):
@@ -930,11 +932,11 @@ def pvi(close, volume):
 
     return lib.pvi([close, volume], [])
 
-pvi.full_name = lib.pvi.full_name
-pvi.type = lib.pvi.type
-pvi.inputs = lib.pvi.inputs
-pvi.options = lib.pvi.options
-pvi.outputs = lib.pvi.outputs
+pvi.full_name = lib.pvi.full_name.decode()
+pvi.type = lib.pvi.type.decode()
+pvi.inputs = [x.decode() for x in lib.pvi.inputs]
+pvi.options = [x.decode() for x in lib.pvi.options]
+pvi.outputs = [x.decode() for x in lib.pvi.outputs]
 
 
 def qstick(open, close, period):
@@ -944,11 +946,11 @@ def qstick(open, close, period):
 
     return lib.qstick([open, close], [period])
 
-qstick.full_name = lib.qstick.full_name
-qstick.type = lib.qstick.type
-qstick.inputs = lib.qstick.inputs
-qstick.options = lib.qstick.options
-qstick.outputs = lib.qstick.outputs
+qstick.full_name = lib.qstick.full_name.decode()
+qstick.type = lib.qstick.type.decode()
+qstick.inputs = [x.decode() for x in lib.qstick.inputs]
+qstick.options = [x.decode() for x in lib.qstick.options]
+qstick.outputs = [x.decode() for x in lib.qstick.outputs]
 
 
 def roc(real, period):
@@ -958,11 +960,11 @@ def roc(real, period):
 
     return lib.roc([real], [period])
 
-roc.full_name = lib.roc.full_name
-roc.type = lib.roc.type
-roc.inputs = lib.roc.inputs
-roc.options = lib.roc.options
-roc.outputs = lib.roc.outputs
+roc.full_name = lib.roc.full_name.decode()
+roc.type = lib.roc.type.decode()
+roc.inputs = [x.decode() for x in lib.roc.inputs]
+roc.options = [x.decode() for x in lib.roc.options]
+roc.outputs = [x.decode() for x in lib.roc.outputs]
 
 
 def rocr(real, period):
@@ -972,11 +974,11 @@ def rocr(real, period):
 
     return lib.rocr([real], [period])
 
-rocr.full_name = lib.rocr.full_name
-rocr.type = lib.rocr.type
-rocr.inputs = lib.rocr.inputs
-rocr.options = lib.rocr.options
-rocr.outputs = lib.rocr.outputs
+rocr.full_name = lib.rocr.full_name.decode()
+rocr.type = lib.rocr.type.decode()
+rocr.inputs = [x.decode() for x in lib.rocr.inputs]
+rocr.options = [x.decode() for x in lib.rocr.options]
+rocr.outputs = [x.decode() for x in lib.rocr.outputs]
 
 
 def round(real):
@@ -986,11 +988,11 @@ def round(real):
 
     return lib.round([real], [])
 
-round.full_name = lib.round.full_name
-round.type = lib.round.type
-round.inputs = lib.round.inputs
-round.options = lib.round.options
-round.outputs = lib.round.outputs
+round.full_name = lib.round.full_name.decode()
+round.type = lib.round.type.decode()
+round.inputs = [x.decode() for x in lib.round.inputs]
+round.options = [x.decode() for x in lib.round.options]
+round.outputs = [x.decode() for x in lib.round.outputs]
 
 
 def rsi(real, period):
@@ -1000,11 +1002,11 @@ def rsi(real, period):
 
     return lib.rsi([real], [period])
 
-rsi.full_name = lib.rsi.full_name
-rsi.type = lib.rsi.type
-rsi.inputs = lib.rsi.inputs
-rsi.options = lib.rsi.options
-rsi.outputs = lib.rsi.outputs
+rsi.full_name = lib.rsi.full_name.decode()
+rsi.type = lib.rsi.type.decode()
+rsi.inputs = [x.decode() for x in lib.rsi.inputs]
+rsi.options = [x.decode() for x in lib.rsi.options]
+rsi.outputs = [x.decode() for x in lib.rsi.outputs]
 
 
 def sin(real):
@@ -1014,11 +1016,11 @@ def sin(real):
 
     return lib.sin([real], [])
 
-sin.full_name = lib.sin.full_name
-sin.type = lib.sin.type
-sin.inputs = lib.sin.inputs
-sin.options = lib.sin.options
-sin.outputs = lib.sin.outputs
+sin.full_name = lib.sin.full_name.decode()
+sin.type = lib.sin.type.decode()
+sin.inputs = [x.decode() for x in lib.sin.inputs]
+sin.options = [x.decode() for x in lib.sin.options]
+sin.outputs = [x.decode() for x in lib.sin.outputs]
 
 
 def sinh(real):
@@ -1028,11 +1030,11 @@ def sinh(real):
 
     return lib.sinh([real], [])
 
-sinh.full_name = lib.sinh.full_name
-sinh.type = lib.sinh.type
-sinh.inputs = lib.sinh.inputs
-sinh.options = lib.sinh.options
-sinh.outputs = lib.sinh.outputs
+sinh.full_name = lib.sinh.full_name.decode()
+sinh.type = lib.sinh.type.decode()
+sinh.inputs = [x.decode() for x in lib.sinh.inputs]
+sinh.options = [x.decode() for x in lib.sinh.options]
+sinh.outputs = [x.decode() for x in lib.sinh.outputs]
 
 
 def sma(real, period):
@@ -1042,11 +1044,11 @@ def sma(real, period):
 
     return lib.sma([real], [period])
 
-sma.full_name = lib.sma.full_name
-sma.type = lib.sma.type
-sma.inputs = lib.sma.inputs
-sma.options = lib.sma.options
-sma.outputs = lib.sma.outputs
+sma.full_name = lib.sma.full_name.decode()
+sma.type = lib.sma.type.decode()
+sma.inputs = [x.decode() for x in lib.sma.inputs]
+sma.options = [x.decode() for x in lib.sma.options]
+sma.outputs = [x.decode() for x in lib.sma.outputs]
 
 
 def sqrt(real):
@@ -1056,11 +1058,11 @@ def sqrt(real):
 
     return lib.sqrt([real], [])
 
-sqrt.full_name = lib.sqrt.full_name
-sqrt.type = lib.sqrt.type
-sqrt.inputs = lib.sqrt.inputs
-sqrt.options = lib.sqrt.options
-sqrt.outputs = lib.sqrt.outputs
+sqrt.full_name = lib.sqrt.full_name.decode()
+sqrt.type = lib.sqrt.type.decode()
+sqrt.inputs = [x.decode() for x in lib.sqrt.inputs]
+sqrt.options = [x.decode() for x in lib.sqrt.options]
+sqrt.outputs = [x.decode() for x in lib.sqrt.outputs]
 
 
 def stddev(real, period):
@@ -1070,11 +1072,11 @@ def stddev(real, period):
 
     return lib.stddev([real], [period])
 
-stddev.full_name = lib.stddev.full_name
-stddev.type = lib.stddev.type
-stddev.inputs = lib.stddev.inputs
-stddev.options = lib.stddev.options
-stddev.outputs = lib.stddev.outputs
+stddev.full_name = lib.stddev.full_name.decode()
+stddev.type = lib.stddev.type.decode()
+stddev.inputs = [x.decode() for x in lib.stddev.inputs]
+stddev.options = [x.decode() for x in lib.stddev.options]
+stddev.outputs = [x.decode() for x in lib.stddev.outputs]
 
 
 def stderr(real, period):
@@ -1084,11 +1086,11 @@ def stderr(real, period):
 
     return lib.stderr([real], [period])
 
-stderr.full_name = lib.stderr.full_name
-stderr.type = lib.stderr.type
-stderr.inputs = lib.stderr.inputs
-stderr.options = lib.stderr.options
-stderr.outputs = lib.stderr.outputs
+stderr.full_name = lib.stderr.full_name.decode()
+stderr.type = lib.stderr.type.decode()
+stderr.inputs = [x.decode() for x in lib.stderr.inputs]
+stderr.options = [x.decode() for x in lib.stderr.options]
+stderr.outputs = [x.decode() for x in lib.stderr.outputs]
 
 
 def stoch(high, low, close, pct_k_period, pct_k_slowing_period, pct_d_period):
@@ -1098,11 +1100,11 @@ def stoch(high, low, close, pct_k_period, pct_k_slowing_period, pct_d_period):
 
     return lib.stoch([high, low, close], [pct_k_period, pct_k_slowing_period, pct_d_period])
 
-stoch.full_name = lib.stoch.full_name
-stoch.type = lib.stoch.type
-stoch.inputs = lib.stoch.inputs
-stoch.options = lib.stoch.options
-stoch.outputs = lib.stoch.outputs
+stoch.full_name = lib.stoch.full_name.decode()
+stoch.type = lib.stoch.type.decode()
+stoch.inputs = [x.decode() for x in lib.stoch.inputs]
+stoch.options = [x.decode() for x in lib.stoch.options]
+stoch.outputs = [x.decode() for x in lib.stoch.outputs]
 
 
 def sub(real, real2):
@@ -1112,11 +1114,11 @@ def sub(real, real2):
 
     return lib.sub([real, real2], [])
 
-sub.full_name = lib.sub.full_name
-sub.type = lib.sub.type
-sub.inputs = lib.sub.inputs
-sub.options = lib.sub.options
-sub.outputs = lib.sub.outputs
+sub.full_name = lib.sub.full_name.decode()
+sub.type = lib.sub.type.decode()
+sub.inputs = [x.decode() for x in lib.sub.inputs]
+sub.options = [x.decode() for x in lib.sub.options]
+sub.outputs = [x.decode() for x in lib.sub.outputs]
 
 
 def sum(real, period):
@@ -1126,11 +1128,11 @@ def sum(real, period):
 
     return lib.sum([real], [period])
 
-sum.full_name = lib.sum.full_name
-sum.type = lib.sum.type
-sum.inputs = lib.sum.inputs
-sum.options = lib.sum.options
-sum.outputs = lib.sum.outputs
+sum.full_name = lib.sum.full_name.decode()
+sum.type = lib.sum.type.decode()
+sum.inputs = [x.decode() for x in lib.sum.inputs]
+sum.options = [x.decode() for x in lib.sum.options]
+sum.outputs = [x.decode() for x in lib.sum.outputs]
 
 
 def tan(real):
@@ -1140,11 +1142,11 @@ def tan(real):
 
     return lib.tan([real], [])
 
-tan.full_name = lib.tan.full_name
-tan.type = lib.tan.type
-tan.inputs = lib.tan.inputs
-tan.options = lib.tan.options
-tan.outputs = lib.tan.outputs
+tan.full_name = lib.tan.full_name.decode()
+tan.type = lib.tan.type.decode()
+tan.inputs = [x.decode() for x in lib.tan.inputs]
+tan.options = [x.decode() for x in lib.tan.options]
+tan.outputs = [x.decode() for x in lib.tan.outputs]
 
 
 def tanh(real):
@@ -1154,11 +1156,11 @@ def tanh(real):
 
     return lib.tanh([real], [])
 
-tanh.full_name = lib.tanh.full_name
-tanh.type = lib.tanh.type
-tanh.inputs = lib.tanh.inputs
-tanh.options = lib.tanh.options
-tanh.outputs = lib.tanh.outputs
+tanh.full_name = lib.tanh.full_name.decode()
+tanh.type = lib.tanh.type.decode()
+tanh.inputs = [x.decode() for x in lib.tanh.inputs]
+tanh.options = [x.decode() for x in lib.tanh.options]
+tanh.outputs = [x.decode() for x in lib.tanh.outputs]
 
 
 def tema(real, period):
@@ -1168,11 +1170,11 @@ def tema(real, period):
 
     return lib.tema([real], [period])
 
-tema.full_name = lib.tema.full_name
-tema.type = lib.tema.type
-tema.inputs = lib.tema.inputs
-tema.options = lib.tema.options
-tema.outputs = lib.tema.outputs
+tema.full_name = lib.tema.full_name.decode()
+tema.type = lib.tema.type.decode()
+tema.inputs = [x.decode() for x in lib.tema.inputs]
+tema.options = [x.decode() for x in lib.tema.options]
+tema.outputs = [x.decode() for x in lib.tema.outputs]
 
 
 def todeg(real):
@@ -1182,11 +1184,11 @@ def todeg(real):
 
     return lib.todeg([real], [])
 
-todeg.full_name = lib.todeg.full_name
-todeg.type = lib.todeg.type
-todeg.inputs = lib.todeg.inputs
-todeg.options = lib.todeg.options
-todeg.outputs = lib.todeg.outputs
+todeg.full_name = lib.todeg.full_name.decode()
+todeg.type = lib.todeg.type.decode()
+todeg.inputs = [x.decode() for x in lib.todeg.inputs]
+todeg.options = [x.decode() for x in lib.todeg.options]
+todeg.outputs = [x.decode() for x in lib.todeg.outputs]
 
 
 def torad(real):
@@ -1196,11 +1198,11 @@ def torad(real):
 
     return lib.torad([real], [])
 
-torad.full_name = lib.torad.full_name
-torad.type = lib.torad.type
-torad.inputs = lib.torad.inputs
-torad.options = lib.torad.options
-torad.outputs = lib.torad.outputs
+torad.full_name = lib.torad.full_name.decode()
+torad.type = lib.torad.type.decode()
+torad.inputs = [x.decode() for x in lib.torad.inputs]
+torad.options = [x.decode() for x in lib.torad.options]
+torad.outputs = [x.decode() for x in lib.torad.outputs]
 
 
 def tr(high, low, close):
@@ -1210,11 +1212,11 @@ def tr(high, low, close):
 
     return lib.tr([high, low, close], [])
 
-tr.full_name = lib.tr.full_name
-tr.type = lib.tr.type
-tr.inputs = lib.tr.inputs
-tr.options = lib.tr.options
-tr.outputs = lib.tr.outputs
+tr.full_name = lib.tr.full_name.decode()
+tr.type = lib.tr.type.decode()
+tr.inputs = [x.decode() for x in lib.tr.inputs]
+tr.options = [x.decode() for x in lib.tr.options]
+tr.outputs = [x.decode() for x in lib.tr.outputs]
 
 
 def trima(real, period):
@@ -1224,11 +1226,11 @@ def trima(real, period):
 
     return lib.trima([real], [period])
 
-trima.full_name = lib.trima.full_name
-trima.type = lib.trima.type
-trima.inputs = lib.trima.inputs
-trima.options = lib.trima.options
-trima.outputs = lib.trima.outputs
+trima.full_name = lib.trima.full_name.decode()
+trima.type = lib.trima.type.decode()
+trima.inputs = [x.decode() for x in lib.trima.inputs]
+trima.options = [x.decode() for x in lib.trima.options]
+trima.outputs = [x.decode() for x in lib.trima.outputs]
 
 
 def trix(real, period):
@@ -1238,11 +1240,11 @@ def trix(real, period):
 
     return lib.trix([real], [period])
 
-trix.full_name = lib.trix.full_name
-trix.type = lib.trix.type
-trix.inputs = lib.trix.inputs
-trix.options = lib.trix.options
-trix.outputs = lib.trix.outputs
+trix.full_name = lib.trix.full_name.decode()
+trix.type = lib.trix.type.decode()
+trix.inputs = [x.decode() for x in lib.trix.inputs]
+trix.options = [x.decode() for x in lib.trix.options]
+trix.outputs = [x.decode() for x in lib.trix.outputs]
 
 
 def trunc(real):
@@ -1252,11 +1254,11 @@ def trunc(real):
 
     return lib.trunc([real], [])
 
-trunc.full_name = lib.trunc.full_name
-trunc.type = lib.trunc.type
-trunc.inputs = lib.trunc.inputs
-trunc.options = lib.trunc.options
-trunc.outputs = lib.trunc.outputs
+trunc.full_name = lib.trunc.full_name.decode()
+trunc.type = lib.trunc.type.decode()
+trunc.inputs = [x.decode() for x in lib.trunc.inputs]
+trunc.options = [x.decode() for x in lib.trunc.options]
+trunc.outputs = [x.decode() for x in lib.trunc.outputs]
 
 
 def tsf(real, period):
@@ -1266,11 +1268,11 @@ def tsf(real, period):
 
     return lib.tsf([real], [period])
 
-tsf.full_name = lib.tsf.full_name
-tsf.type = lib.tsf.type
-tsf.inputs = lib.tsf.inputs
-tsf.options = lib.tsf.options
-tsf.outputs = lib.tsf.outputs
+tsf.full_name = lib.tsf.full_name.decode()
+tsf.type = lib.tsf.type.decode()
+tsf.inputs = [x.decode() for x in lib.tsf.inputs]
+tsf.options = [x.decode() for x in lib.tsf.options]
+tsf.outputs = [x.decode() for x in lib.tsf.outputs]
 
 
 def typprice(high, low, close):
@@ -1280,11 +1282,11 @@ def typprice(high, low, close):
 
     return lib.typprice([high, low, close], [])
 
-typprice.full_name = lib.typprice.full_name
-typprice.type = lib.typprice.type
-typprice.inputs = lib.typprice.inputs
-typprice.options = lib.typprice.options
-typprice.outputs = lib.typprice.outputs
+typprice.full_name = lib.typprice.full_name.decode()
+typprice.type = lib.typprice.type.decode()
+typprice.inputs = [x.decode() for x in lib.typprice.inputs]
+typprice.options = [x.decode() for x in lib.typprice.options]
+typprice.outputs = [x.decode() for x in lib.typprice.outputs]
 
 
 def ultosc(high, low, close, short_period, medium_period, long_period):
@@ -1294,11 +1296,11 @@ def ultosc(high, low, close, short_period, medium_period, long_period):
 
     return lib.ultosc([high, low, close], [short_period, medium_period, long_period])
 
-ultosc.full_name = lib.ultosc.full_name
-ultosc.type = lib.ultosc.type
-ultosc.inputs = lib.ultosc.inputs
-ultosc.options = lib.ultosc.options
-ultosc.outputs = lib.ultosc.outputs
+ultosc.full_name = lib.ultosc.full_name.decode()
+ultosc.type = lib.ultosc.type.decode()
+ultosc.inputs = [x.decode() for x in lib.ultosc.inputs]
+ultosc.options = [x.decode() for x in lib.ultosc.options]
+ultosc.outputs = [x.decode() for x in lib.ultosc.outputs]
 
 
 def var(real, period):
@@ -1308,11 +1310,11 @@ def var(real, period):
 
     return lib.var([real], [period])
 
-var.full_name = lib.var.full_name
-var.type = lib.var.type
-var.inputs = lib.var.inputs
-var.options = lib.var.options
-var.outputs = lib.var.outputs
+var.full_name = lib.var.full_name.decode()
+var.type = lib.var.type.decode()
+var.inputs = [x.decode() for x in lib.var.inputs]
+var.options = [x.decode() for x in lib.var.options]
+var.outputs = [x.decode() for x in lib.var.outputs]
 
 
 def vhf(real, period):
@@ -1322,11 +1324,11 @@ def vhf(real, period):
 
     return lib.vhf([real], [period])
 
-vhf.full_name = lib.vhf.full_name
-vhf.type = lib.vhf.type
-vhf.inputs = lib.vhf.inputs
-vhf.options = lib.vhf.options
-vhf.outputs = lib.vhf.outputs
+vhf.full_name = lib.vhf.full_name.decode()
+vhf.type = lib.vhf.type.decode()
+vhf.inputs = [x.decode() for x in lib.vhf.inputs]
+vhf.options = [x.decode() for x in lib.vhf.options]
+vhf.outputs = [x.decode() for x in lib.vhf.outputs]
 
 
 def vidya(real, short_period, long_period, alpha):
@@ -1336,11 +1338,11 @@ def vidya(real, short_period, long_period, alpha):
 
     return lib.vidya([real], [short_period, long_period, alpha])
 
-vidya.full_name = lib.vidya.full_name
-vidya.type = lib.vidya.type
-vidya.inputs = lib.vidya.inputs
-vidya.options = lib.vidya.options
-vidya.outputs = lib.vidya.outputs
+vidya.full_name = lib.vidya.full_name.decode()
+vidya.type = lib.vidya.type.decode()
+vidya.inputs = [x.decode() for x in lib.vidya.inputs]
+vidya.options = [x.decode() for x in lib.vidya.options]
+vidya.outputs = [x.decode() for x in lib.vidya.outputs]
 
 
 def volatility(real, period):
@@ -1350,11 +1352,11 @@ def volatility(real, period):
 
     return lib.volatility([real], [period])
 
-volatility.full_name = lib.volatility.full_name
-volatility.type = lib.volatility.type
-volatility.inputs = lib.volatility.inputs
-volatility.options = lib.volatility.options
-volatility.outputs = lib.volatility.outputs
+volatility.full_name = lib.volatility.full_name.decode()
+volatility.type = lib.volatility.type.decode()
+volatility.inputs = [x.decode() for x in lib.volatility.inputs]
+volatility.options = [x.decode() for x in lib.volatility.options]
+volatility.outputs = [x.decode() for x in lib.volatility.outputs]
 
 
 def vosc(volume, short_period, long_period):
@@ -1364,11 +1366,11 @@ def vosc(volume, short_period, long_period):
 
     return lib.vosc([volume], [short_period, long_period])
 
-vosc.full_name = lib.vosc.full_name
-vosc.type = lib.vosc.type
-vosc.inputs = lib.vosc.inputs
-vosc.options = lib.vosc.options
-vosc.outputs = lib.vosc.outputs
+vosc.full_name = lib.vosc.full_name.decode()
+vosc.type = lib.vosc.type.decode()
+vosc.inputs = [x.decode() for x in lib.vosc.inputs]
+vosc.options = [x.decode() for x in lib.vosc.options]
+vosc.outputs = [x.decode() for x in lib.vosc.outputs]
 
 
 def vwma(close, volume, period):
@@ -1378,11 +1380,11 @@ def vwma(close, volume, period):
 
     return lib.vwma([close, volume], [period])
 
-vwma.full_name = lib.vwma.full_name
-vwma.type = lib.vwma.type
-vwma.inputs = lib.vwma.inputs
-vwma.options = lib.vwma.options
-vwma.outputs = lib.vwma.outputs
+vwma.full_name = lib.vwma.full_name.decode()
+vwma.type = lib.vwma.type.decode()
+vwma.inputs = [x.decode() for x in lib.vwma.inputs]
+vwma.options = [x.decode() for x in lib.vwma.options]
+vwma.outputs = [x.decode() for x in lib.vwma.outputs]
 
 
 def wad(high, low, close):
@@ -1392,11 +1394,11 @@ def wad(high, low, close):
 
     return lib.wad([high, low, close], [])
 
-wad.full_name = lib.wad.full_name
-wad.type = lib.wad.type
-wad.inputs = lib.wad.inputs
-wad.options = lib.wad.options
-wad.outputs = lib.wad.outputs
+wad.full_name = lib.wad.full_name.decode()
+wad.type = lib.wad.type.decode()
+wad.inputs = [x.decode() for x in lib.wad.inputs]
+wad.options = [x.decode() for x in lib.wad.options]
+wad.outputs = [x.decode() for x in lib.wad.outputs]
 
 
 def wcprice(high, low, close):
@@ -1406,11 +1408,11 @@ def wcprice(high, low, close):
 
     return lib.wcprice([high, low, close], [])
 
-wcprice.full_name = lib.wcprice.full_name
-wcprice.type = lib.wcprice.type
-wcprice.inputs = lib.wcprice.inputs
-wcprice.options = lib.wcprice.options
-wcprice.outputs = lib.wcprice.outputs
+wcprice.full_name = lib.wcprice.full_name.decode()
+wcprice.type = lib.wcprice.type.decode()
+wcprice.inputs = [x.decode() for x in lib.wcprice.inputs]
+wcprice.options = [x.decode() for x in lib.wcprice.options]
+wcprice.outputs = [x.decode() for x in lib.wcprice.outputs]
 
 
 def wilders(real, period):
@@ -1420,11 +1422,11 @@ def wilders(real, period):
 
     return lib.wilders([real], [period])
 
-wilders.full_name = lib.wilders.full_name
-wilders.type = lib.wilders.type
-wilders.inputs = lib.wilders.inputs
-wilders.options = lib.wilders.options
-wilders.outputs = lib.wilders.outputs
+wilders.full_name = lib.wilders.full_name.decode()
+wilders.type = lib.wilders.type.decode()
+wilders.inputs = [x.decode() for x in lib.wilders.inputs]
+wilders.options = [x.decode() for x in lib.wilders.options]
+wilders.outputs = [x.decode() for x in lib.wilders.outputs]
 
 
 def willr(high, low, close, period):
@@ -1434,11 +1436,11 @@ def willr(high, low, close, period):
 
     return lib.willr([high, low, close], [period])
 
-willr.full_name = lib.willr.full_name
-willr.type = lib.willr.type
-willr.inputs = lib.willr.inputs
-willr.options = lib.willr.options
-willr.outputs = lib.willr.outputs
+willr.full_name = lib.willr.full_name.decode()
+willr.type = lib.willr.type.decode()
+willr.inputs = [x.decode() for x in lib.willr.inputs]
+willr.options = [x.decode() for x in lib.willr.options]
+willr.outputs = [x.decode() for x in lib.willr.outputs]
 
 
 def wma(real, period):
@@ -1448,11 +1450,11 @@ def wma(real, period):
 
     return lib.wma([real], [period])
 
-wma.full_name = lib.wma.full_name
-wma.type = lib.wma.type
-wma.inputs = lib.wma.inputs
-wma.options = lib.wma.options
-wma.outputs = lib.wma.outputs
+wma.full_name = lib.wma.full_name.decode()
+wma.type = lib.wma.type.decode()
+wma.inputs = [x.decode() for x in lib.wma.inputs]
+wma.options = [x.decode() for x in lib.wma.options]
+wma.outputs = [x.decode() for x in lib.wma.outputs]
 
 
 def zlema(real, period):
@@ -1462,9 +1464,9 @@ def zlema(real, period):
 
     return lib.zlema([real], [period])
 
-zlema.full_name = lib.zlema.full_name
-zlema.type = lib.zlema.type
-zlema.inputs = lib.zlema.inputs
-zlema.options = lib.zlema.options
-zlema.outputs = lib.zlema.outputs
+zlema.full_name = lib.zlema.full_name.decode()
+zlema.type = lib.zlema.type.decode()
+zlema.inputs = [x.decode() for x in lib.zlema.inputs]
+zlema.options = [x.decode() for x in lib.zlema.options]
+zlema.outputs = [x.decode() for x in lib.zlema.outputs]
 
