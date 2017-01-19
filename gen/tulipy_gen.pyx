@@ -31,7 +31,9 @@ TULIPY_TEMPLATE = """
 # This file is generated. Do not modify directly.
 
 from . import lib
-from .lib import TI_VERSION, TI_BUILD, InvalidOptionError
+from .lib import TI_BUILD, InvalidOptionError
+
+TI_VERSION = lib.TI_VERSION.decode()
 
 {indicators}
 """
@@ -44,11 +46,11 @@ def {name}({inputs}{sep}{options}):
 
     return lib.{name}([{inputs}], [{options}])
 
-{name}.full_name = lib.{name}.full_name
-{name}.type = lib.{name}.type
-{name}.inputs = lib.{name}.inputs
-{name}.options = lib.{name}.options
-{name}.outputs = lib.{name}.outputs
+{name}.full_name = lib.{name}.full_name.decode()
+{name}.type = lib.{name}.type.decode()
+{name}.inputs = [x.decode() for x in lib.{name}.inputs]
+{name}.options = [x.decode() for x in lib.{name}.options]
+{name}.outputs = [x.decode() for x in lib.{name}.outputs]
 """
 
 WRAPPER_TEMPLATE = """
