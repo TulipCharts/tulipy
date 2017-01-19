@@ -15,7 +15,7 @@ ext_modules = [
 setup(
     name='tulipy',
     description='Python bindings for https://github.com/TulipCharts/tulipindicators',
-    version='0.1.2',
+    version='0.2',
     url='https://github.com/cirla/tulipy',
     author='https://github.com/cirla/tulipy/blob/master/AUTHORS',
     license='LGPL-3.0',
