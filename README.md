@@ -158,7 +158,7 @@ DATA2 = np.array([83.15, 82.84, 83.99, 84.55, 84.36])
 
 ```python
 # 'high' trimmed to DATA[-5:] == array([ 85.53,  86.54,  86.89,  87.77,  87.29])
-ti.aroonosc(high=DATA, low=DATA2, period=2.0)
+ti.aroonosc(high=DATA, low=DATA2, period=2)
 ```
 
 

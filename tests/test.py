@@ -14,7 +14,7 @@ class TestIndicators(unittest.TestCase):
                              83.778, 84.254, 84.994, 85.574, 86.218,
                              86.804]),
 
-        actual = ti.sma(CLOSE, period=5.0)
+        actual = ti.sma(CLOSE, period=5)
 
         self.assertTrue(np.allclose(actual, expected))
 
