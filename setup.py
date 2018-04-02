@@ -14,8 +14,8 @@ ext_modules = [
 
 setup(
     name='tulipy',
-    description='Python bindings for https://github.com/TulipCharts/tulipindicators',
-    version='0.2',
+    description='Financial Technical Analysis Indicator Library. Python bindings for https://github.com/TulipCharts/tulipindicators',
+    version='0.2.1',
     url='https://github.com/cirla/tulipy',
     author='https://github.com/cirla/tulipy/blob/master/AUTHORS',
     license='LGPL-3.0',

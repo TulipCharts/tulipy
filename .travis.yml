@@ -1,9 +1,17 @@
 language: python
 python:
-  - "2.7"
-  - "3.6"
-
-install: "pip install -r requirements.txt"
-
+  - '2.7'
+  - '3.6'
+install:
+  - pip install --upgrade pip setuptools wheel
+  - pip install --only-binary=Cython,numpy -r requirements.txt
 script: make test
+deploy:
+  provider: pypi
+  user: cirla
+  password:
+    secure: jiX5oPUB+d7j+TmTSqz2imk5JBZILUCAolCyvisqBYEN4CiCNe0Dzgbytk9/25zXYXvyAzA28vNiWjahZzNNB64+spRrtNlgl3YNk+va8kMAJ97NDgqUpIxouii9Vriw+gNM+gYsfc+hELiZTr0zB8KT28taO0doQJbw7TT+0Klfi2OHBvs/18ggXOWme7zryFqX5NgNl+Gva7vN66eCXdNhQRzfmfJ8zUB2JdqeNkke4yz7ydPLLiCxWI4QNXcFasYvEuAPqWKLrDBsaNkCl3EgUoKCfVNuMz2gqYv4ZEwhGoTVI13TiMsfkTFtN0397wrpBX5Sp3NhVhPFH/kSApY6133yfAyoAgfOySpC9Z+yQCMbw7djPoY2PcCEQQK3DZ4yfZsaFaVVm3bvrftA6Bx8zxzdCPCZQyHNyJxtv9BYUO5sf5OcpYBCgs2XzqjOe5d2jgyp06ysANRSkdl3Xh62PZzk7q6LYZz0Hf4q8yWzJAQ75foD1ETx7LnBQT/cPFzc61kaW+vALs65k1s2+EkZ6w6X8v7EUw4nb59ZZiKn9f29czj78MwJ/pCJlWrDfl9RrrLxhMcS5OA8oW6cbuCncbvshguJMIrKu24Fur/EVDEUP4b72SSp7SAnttitnCSyNGPInyP5RsR6g4A3zwibgXbjfjdLif0kAkD+u/k=
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true
 
