@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/cirla/tulipy.svg?branch=master)](https://travis-ci.org/cirla/tulipy)
+[![Build status](https://ci.appveyor.com/api/projects/status/g34af6ti605e2q4h?svg=true)](https://ci.appveyor.com/project/cirla/tulipy)
 
 # tulipy
 
@@ -10,6 +11,7 @@ Tulipy requires [numpy](http://www.numpy.org/) as all inputs and outputs are num
 
 You can install via `pip install tulipy`.
 If a wheel is not available for your system, you will need to `pip install Cython numpy` to build from the source distribution.
+When building from source on Windows, you will need the Microsoft Visual C++ Build Tools installed.
 
 ## Usage
 
@@ -27,7 +29,7 @@ ti.TI_VERSION
 
 
 
-    '0.8.1'
+    '0.8.2'
 
 
 

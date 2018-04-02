@@ -170,7 +170,7 @@ def clean(names):
     c = Counter()
 
     for n in names:
-        n = n.replace(' ', '_').replace('%', 'pct_')
+        n = n.decode().replace(' ', '_').replace('%', 'pct_')
         c[n] += 1
         if c[n] > 1:
             yield "{}{}".format(n, c[n])
@@ -186,8 +186,8 @@ def gen(init_py, lib_pyx):
         info = ti.ti_indicators[i]
 
         indicators.append(INDICATOR_TEMPLATE.format(
-            name=info.name,
-            full_name=info.full_name,
+            name=info.name.decode(),
+            full_name=info.full_name.decode(),
             inputs=', '.join(clean([info.input_names[j] for j in range(info.inputs)])),
             sep=', ' if info.options else '',
             options=', '.join(clean([info.option_names[j] for j in range(info.options)])),
@@ -195,7 +195,7 @@ def gen(init_py, lib_pyx):
 
         wrapper_indicators.append(INDICATOR_WRAPPER_TEMPLATE.format(
             index=i,
-            name=info.name,
+            name=info.name.decode(),
         ))
 
     init_py.write(TULIPY_TEMPLATE.format(
