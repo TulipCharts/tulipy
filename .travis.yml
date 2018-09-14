@@ -1,11 +1,19 @@
 language: python
-python:
-  - '2.7'
-  - '3.6'
+
+matrix:
+  include:
+    - python: 2.7
+    - python: 3.6
+    - python: 3.7
+      dist: xenial
+      sudo: true
+
 install:
   - pip install --upgrade pip setuptools wheel
   - pip install --only-binary=Cython,numpy -r requirements.txt
+
 script: make test
+
 deploy:
   provider: pypi
   user: cirla
