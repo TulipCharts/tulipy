@@ -4,6 +4,9 @@ from distutils.extension import Extension
 import numpy as np
 from Cython.Distutils import build_ext
 
+with open('README.md') as f:
+    long_description = f.read()
+
 ext_modules = [
     Extension(name='tulipy.lib',
               sources=['libindicators/tiamalgamation.c', 'tulipy/lib/__init__.pyx'],
@@ -15,6 +18,8 @@ ext_modules = [
 setup(
     name='tulipy',
     description='Financial Technical Analysis Indicator Library. Python bindings for https://github.com/TulipCharts/tulipindicators',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     version='0.3.0',
     url='https://github.com/cirla/tulipy',
     author='https://github.com/cirla/tulipy/blob/master/AUTHORS',
