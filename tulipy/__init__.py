@@ -1107,6 +1107,20 @@ stoch.options = [x.decode() for x in lib.stoch.options]
 stoch.outputs = [x.decode() for x in lib.stoch.outputs]
 
 
+def stochrsi(real, period):
+    """
+    Stochastic RSI
+    """
+
+    return lib.stochrsi([real], [period])
+
+stochrsi.full_name = lib.stochrsi.full_name.decode()
+stochrsi.type = lib.stochrsi.type.decode()
+stochrsi.inputs = [x.decode() for x in lib.stochrsi.inputs]
+stochrsi.options = [x.decode() for x in lib.stochrsi.options]
+stochrsi.outputs = [x.decode() for x in lib.stochrsi.outputs]
+
+
 def sub(real, real2):
     """
     Vector Subtraction
