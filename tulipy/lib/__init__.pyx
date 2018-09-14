@@ -42,6 +42,9 @@ TI_BUILD   = ti.TI_BUILD
 class InvalidOptionError(ValueError):
     pass
 
+class InvalidInputError(ValueError):
+    pass
+
 cdef dict _type_names = {
     ti.TI_TYPE_OVERLAY:     b'overlay',
     ti.TI_TYPE_INDICATOR:   b'indicator',
@@ -105,7 +108,12 @@ cdef class _Indicator:
         cdef np.ndarray[np.float64_t, ndim=1, mode='c'] input_ref
 
         for i in range(self.info.inputs):
-            input_ref = inputs[i][-min_input_len:]
+            if inputs[i].dtype == np.float64:
+                input_ref = inputs[i][-min_input_len:]
+            elif np.issubdtype(inputs[i].dtype, np.number):
+                input_ref = inputs[i][-min_input_len:].astype(np.float64)
+            else:
+                raise InvalidInputError("Input arrays must have a numeric dtype")
             c_inputs[i] = &input_ref[0]
 
         cdef ti.TI_REAL * c_outputs[ti.TI_MAXINDPARAMS]
