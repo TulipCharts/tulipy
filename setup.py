@@ -27,8 +27,8 @@ setup(
     cmdclass={'build_ext': build_ext},
     ext_modules=ext_modules,
     packages=find_packages(exclude=["tests"]),
-    install_requires=['numpy'],
-    setup_requires=['Cython', 'numpy'],
+    install_requires=['numpy', 'pandas'],
+    setup_requires=['Cython', 'numpy', 'pandas'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',

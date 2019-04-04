@@ -31,6 +31,7 @@ except ImportError: # Python 2
 
 from libc.limits cimport INT_MAX
 
+from pandas import Series
 import numpy as np
 cimport numpy as np
 
@@ -89,7 +90,11 @@ cdef class _Indicator:
             for i in range(self.info.outputs)
         ]
 
-    def __call__(self, inputs, options):
+    def __call__(self, inputs, options, pad_none):
+        for i in range(len(inputs)):
+            if isinstance(inputs[i], Series):
+                inputs[i] = np.array(inputs[i])
+
         cdef int min_input_len = INT_MAX
         for i in range(self.info.inputs):
             min_input_len = builtin_min(min_input_len, inputs[i].shape[0])
@@ -118,7 +123,8 @@ cdef class _Indicator:
             c_inputs[i] = &input_ref[0]
 
         cdef ti.TI_REAL * c_outputs[ti.TI_MAXINDPARAMS]
-        cdef np.ndarray[np.float64_t, ndim=2, mode='c'] outputs = np.empty((self.info.outputs, min_input_len - delta))
+        cdef np.ndarray[np.float64_t, ndim=2, mode='c'] outputs = np.empty((
+            self.info.outputs, min_input_len - delta))
         for i in range(self.info.outputs):
             c_outputs[i] = &outputs[i,0]
 
@@ -126,8 +132,16 @@ cdef class _Indicator:
         if ret == ti.TI_INVALID_OPTION:
             raise InvalidOptionError()
 
+        if pad_none:
+            padding_outputs = np.empty((self.info.outputs, min_input_len))
+            for i in range(len(outputs)):
+                padding_outputs[i] = np.append(([np.nan] * delta), outputs[i])
+            
         if self.info.outputs == 1:
-            return outputs[0]
+            if pad_none:
+                return padding_outputs[0]
+            else:
+                return outputs[0]        
 
         return tuple(outputs)
 
