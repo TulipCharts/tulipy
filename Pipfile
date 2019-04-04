@@ -4,10 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+jupyter = "*"
 
 [packages]
 numpy = "==1.15.1"
 Cython = "==0.28.5"
+pandas = "*"
 
 [requires]
 python_version = "3.6"
