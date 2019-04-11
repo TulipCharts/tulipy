@@ -19,8 +19,8 @@ setup(
     name='tulipy',
     description='Financial Technical Analysis Indicator Library. Python bindings for https://github.com/TulipCharts/tulipindicators',
     long_description=long_description,
-    long_description_content_type='text/markdown',
-    version='0.3.1',
+    long_description_content_type='text/markdown; charset=UTF-8',
+    version='0.4.0',
     url='https://github.com/cirla/tulipy',
     author='https://github.com/cirla/tulipy/blob/master/AUTHORS',
     license='LGPL-3.0',
@@ -42,4 +42,3 @@ setup(
         'Topic :: Scientific/Engineering :: Information Analysis',
     ],
 )
-

@@ -1,12 +1,13 @@
 build/
 dist/
 venv/
+.venv/
 *.egg-info
 *.pyc
 *.so
 tulipy/lib/*.c
 gen/*.c
 .ipynb_checkpoints/
-
 *.swp
-
+__pycache__/
+pip-wheel-metadata/
