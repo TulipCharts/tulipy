@@ -1,25 +1,20 @@
 language: python
-
 matrix:
   include:
-    - python: 2.7
-    - python: 3.6
-    - python: 3.7
-      dist: xenial
-      sudo: true
-
+  - python: 2.7
+  - python: 3.6
+  - python: 3.7
+    dist: xenial
+    sudo: true
 install:
-  - pip install --upgrade pip setuptools wheel
-  - pip install --only-binary=Cython,numpy -r requirements.txt
-
+- pip install --upgrade pip setuptools wheel
+- pip install --only-binary=Cython,numpy -r requirements.txt
 script: make test
-
 deploy:
   provider: pypi
   user: cirla
   password:
-    secure: jiX5oPUB+d7j+TmTSqz2imk5JBZILUCAolCyvisqBYEN4CiCNe0Dzgbytk9/25zXYXvyAzA28vNiWjahZzNNB64+spRrtNlgl3YNk+va8kMAJ97NDgqUpIxouii9Vriw+gNM+gYsfc+hELiZTr0zB8KT28taO0doQJbw7TT+0Klfi2OHBvs/18ggXOWme7zryFqX5NgNl+Gva7vN66eCXdNhQRzfmfJ8zUB2JdqeNkke4yz7ydPLLiCxWI4QNXcFasYvEuAPqWKLrDBsaNkCl3EgUoKCfVNuMz2gqYv4ZEwhGoTVI13TiMsfkTFtN0397wrpBX5Sp3NhVhPFH/kSApY6133yfAyoAgfOySpC9Z+yQCMbw7djPoY2PcCEQQK3DZ4yfZsaFaVVm3bvrftA6Bx8zxzdCPCZQyHNyJxtv9BYUO5sf5OcpYBCgs2XzqjOe5d2jgyp06ysANRSkdl3Xh62PZzk7q6LYZz0Hf4q8yWzJAQ75foD1ETx7LnBQT/cPFzc61kaW+vALs65k1s2+EkZ6w6X8v7EUw4nb59ZZiKn9f29czj78MwJ/pCJlWrDfl9RrrLxhMcS5OA8oW6cbuCncbvshguJMIrKu24Fur/EVDEUP4b72SSp7SAnttitnCSyNGPInyP5RsR6g4A3zwibgXbjfjdLif0kAkD+u/k=
-  distributions: "sdist"
+    secure: o/piwKMYiR38V4HF4w/Wt5fj5Xqrmu+B9Rn2q/SGAtIxhURgg+nUS9O2cBgJalcs8W0Y33EZUA2Psky321FCyRUrQ/ohPMY8Dkc3gnMdFr9lM7EsFhJT+5Awbzyi/7Y/tjussxtbsVaWnLmXibWCWnbo+iZwbxDhV+zZJA08hTddvhcJpyXWyBdY0Q7eqe78wgUphUuLoEKT/9YDHqIEqYP8QBR2A22RaLzvVBRUg6qhed12TaDSY5kwfJrdwWVURlzHwcsZq63pxjrWKIdJBzusGxbMRNIwU0lo8V+xDwMrOM+KVEAhJ9eMnmuMf4estYw3s+L9A/AGnYJRupGHcUCKZaNua0w7lBUJbHq4irCT4sEmV521ZoiThx+lhqN1kqdvj/yz4Qn+MgBhytqI65CXD4o3u1rXDQnA0IS9vLuVjhGyPZhchW90gd8n/MHSKF4jsR4HSYB9MNeD4sy1Ksz15C0/acfy/c4qpKiV9vc4C7M++Y4uOxxmqj4UiBM2OiWJ7wHmFUAn1+qDED5hzLVrO3o0tR48S/o6AUL4DpWENz1ZQ/OsJEBAm63VyAqGUxQFSrmzBmvjEbaWTCnYJFLsMkg3SXfmFmKFEtsRezWyJkpM4DzjoXOFfTL+W9U1SABfvK6EQIujfMvCQ3aycKciX/M0wPp83xVYCXHpDgI=
+  distributions: sdist bdist_wheel
   on:
     tags: true
-
