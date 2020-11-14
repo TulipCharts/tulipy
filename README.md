@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/cryptocoinserver/tulipy.svg?branch=master)](https://travis-ci.org/cryptocoinserver/tulipy)
 
+I forked the original repo to add support for 3.9.
+It's on pip. Use `pip install newtulipy`.
 
 # tulipy
 
@@ -9,7 +11,7 @@ Tulipy requires [numpy](http://www.numpy.org/) as all inputs and outputs are num
 
 ## Installation
 
-You can install via `pip install tulipy`.
+You can install via `pip install newtulipy`.
 If a wheel is not available for your system, you will need to `pip install Cython numpy` to build from the source distribution.
 When building from source on Windows, you will need the Microsoft Visual C++ Build Tools installed.
 
