@@ -79,4 +79,7 @@ jobs:
 env:
   global:
     - TWINE_USERNAME=__token__
-    # Note: TWINE_PASSWORD is set to a PyPI API token in Travis settings
+      # Note: TWINE_PASSWORD is set to a PyPI API token in Travis settings
+    - CIBW_SKIP = cp27-* pp27-* cp39-macosx_x86_64
+      # Skip building on Python 2.7 on all platforms
+
