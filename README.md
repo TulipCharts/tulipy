@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/cirla/tulipy.svg?branch=master)](https://travis-ci.org/cirla/tulipy)
-[![Build status](https://ci.appveyor.com/api/projects/status/g34af6ti605e2q4h?svg=true)](https://ci.appveyor.com/project/cirla/tulipy)
+[![Build Status](https://travis-ci.org/cryptocoinserver/tulipy.svg?branch=master)](https://travis-ci.org/cryptocoinserver/tulipy)
+
 
 # tulipy
 
