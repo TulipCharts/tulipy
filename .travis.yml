@@ -1,10 +1,11 @@
 language: python
 matrix:
   include:
-  - python: 2.7
   - python: 3.6
   - python: 3.7
-    dist: xenial
+  - python: 3.8
+  - python: 3.9
+    dist: bionic
     sudo: true
 install:
 - pip install --upgrade pip setuptools wheel
