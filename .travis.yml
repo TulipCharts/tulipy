@@ -6,6 +6,7 @@
 # distribution is also created.
 
 language: python
+dist: bionic
 python:
   - 3.6
   - 3.7
