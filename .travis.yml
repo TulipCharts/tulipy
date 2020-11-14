@@ -40,7 +40,7 @@ jobs:
     # Deploy source distribution
     - stage: deploy
       name: Deploy source distribution
-      install: skip
+      install: pip install -r requirements.txt
       script: python3 setup.py sdist --formats=gztar
       after_success: |
         python3 -m pip install twine
@@ -80,4 +80,3 @@ env:
   global:
     - TWINE_USERNAME=__token__
     # Note: TWINE_PASSWORD is set to a PyPI API token in Travis settings
-    - CIBW_BEFORE_BUILD="pip install -r requirements.txt"
