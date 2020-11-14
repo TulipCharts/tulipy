@@ -1,21 +1,81 @@
+# In this configuration, the package is tested against multiple versions of python
+# on Linux and on one version of Python on Windows. If and only if all tests pass
+# will the wheels be built and deployed. Further, deployment is only initiated if
+# the current branch is "master", the current commit is tagged, and the current
+# repo is yours (e.g. it won't run on a Pull Request). For convenience, a source
+# distribution is also created.
+
 language: python
-matrix:
-  include:
-  - python: 3.6
-  - python: 3.7
-  - python: 3.8
-  - python: 3.9
-    dist: bionic
-    sudo: true
+python:
+  - 3.6
+  - 3.7
+  - 3.8
+  - 3.9
+
+before_install:
+  - |
+    if [[ "$TRAVIS_OS_NAME" = windows ]]; then
+        choco install python --version 3.8.0
+        export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+        # make sure it's on PATH as 'python3'
+        ln -s /c/Python38/python.exe /c/Python38/python3.exe
+    fi
 install:
-- pip install --upgrade pip setuptools wheel
-- pip install --only-binary=Cython,numpy -r requirements.txt
-script: make test
-deploy:
-  provider: pypi
-  user: cirla
-  password:
-    secure: o/piwKMYiR38V4HF4w/Wt5fj5Xqrmu+B9Rn2q/SGAtIxhURgg+nUS9O2cBgJalcs8W0Y33EZUA2Psky321FCyRUrQ/ohPMY8Dkc3gnMdFr9lM7EsFhJT+5Awbzyi/7Y/tjussxtbsVaWnLmXibWCWnbo+iZwbxDhV+zZJA08hTddvhcJpyXWyBdY0Q7eqe78wgUphUuLoEKT/9YDHqIEqYP8QBR2A22RaLzvVBRUg6qhed12TaDSY5kwfJrdwWVURlzHwcsZq63pxjrWKIdJBzusGxbMRNIwU0lo8V+xDwMrOM+KVEAhJ9eMnmuMf4estYw3s+L9A/AGnYJRupGHcUCKZaNua0w7lBUJbHq4irCT4sEmV521ZoiThx+lhqN1kqdvj/yz4Qn+MgBhytqI65CXD4o3u1rXDQnA0IS9vLuVjhGyPZhchW90gd8n/MHSKF4jsR4HSYB9MNeD4sy1Ksz15C0/acfy/c4qpKiV9vc4C7M++Y4uOxxmqj4UiBM2OiWJ7wHmFUAn1+qDED5hzLVrO3o0tR48S/o6AUL4DpWENz1ZQ/OsJEBAm63VyAqGUxQFSrmzBmvjEbaWTCnYJFLsMkg3SXfmFmKFEtsRezWyJkpM4DzjoXOFfTL+W9U1SABfvK6EQIujfMvCQ3aycKciX/M0wPp83xVYCXHpDgI=
-  distributions: sdist bdist_wheel
-  on:
-    tags: true
+  - python3 -m pip install --only-binary=Cython,numpy -r requirements.txt
+
+script:
+  - make test
+
+stages:
+  - test
+  # Only execute deployment stage on tagged commits, and from your repository
+  # (e.g. not PRs). Replace with your repo name.
+  - name: deploy
+    if: tag IS PRESENT AND repo = cryptocoinserver/tulipy
+
+jobs:
+  include:
+
+    # Deploy source distribution
+    - stage: deploy
+      name: Deploy source distribution
+      install: skip
+      script: python3 setup.py sdist --formats=gztar
+      after_success: |
+        python3 -m pip install twine
+        python3 -m twine upload --skip-existing dist/*.tar.gz
+    # Deploy on linux
+    - stage: deploy
+      name: Build and deploy Linux wheels
+      services: docker
+      install: python3 -m pip install cibuildwheel==1.6.4
+      script: python3 -m cibuildwheel --output-dir wheelhouse
+      after_success: |
+        python3 -m pip install twine
+        python3 -m twine upload --skip-existing wheelhouse/*.whl
+    # Deploy on mac
+    - stage: deploy
+      name: Build and deploy macOS wheels
+      os: osx
+      # PyPy 7.3.2 needs macOS >= 10.14
+      osx_image: xcode10.2
+      language: shell
+      install: python3 -m pip install cibuildwheel==1.6.4
+      script: python3 -m cibuildwheel --output-dir wheelhouse
+      after_success: |
+        python3 -m pip install twine
+        python3 -m twine upload --skip-existing wheelhouse/*.whl
+    # Deploy on windows
+    - stage: deploy
+      name: Build and deploy Windows wheels
+      os: windows
+      language: shell
+      install: python3 -m pip install cibuildwheel==1.6.4
+      script: python3 -m cibuildwheel --output-dir wheelhouse
+      after_success: |
+        python3 -m pip install twine
+        python3 -m twine upload --skip-existing wheelhouse/*.whl
+env:
+  global:
+    - TWINE_USERNAME=__token__
+    # Note: TWINE_PASSWORD is set to a PyPI API token in Travis settings
