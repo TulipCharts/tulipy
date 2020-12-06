@@ -80,5 +80,4 @@ env:
   global:
     - TWINE_USERNAME=__token__
     # Note: TWINE_PASSWORD is set to a PyPI API token in Travis settings
-    - CIBW_SKIP="cp27-* cp35-* pp27-* pp*-macosx_x86_64"
-    # Skip building on Python 2.7, 3.5 because of EOL on all platforms. Skip PyPy macosx because of polyfit RuntimeError.
+    - CIBW_SKIP="cp27-* cp35-* pp27-*"
