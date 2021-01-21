@@ -20,7 +20,7 @@ setup(
     description='Financial Technical Analysis Indicator Library. Python bindings for https://github.com/TulipCharts/tulipindicators',
     long_description=long_description,
     long_description_content_type='text/markdown; charset=UTF-8',
-    version='0.4.2',
+    version='0.4.3',
     url='https://github.com/cryptocoinserver/tulipy',
     author='https://travis-ci.org/cryptocoinserver/tulipy/blob/master/AUTHORS',
     license='LGPL-3.0',
