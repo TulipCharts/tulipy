@@ -2,16 +2,26 @@ from setuptools import setup, find_packages
 from distutils.extension import Extension
 
 import numpy as np
+from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 
 with open('README.md') as f:
     long_description = f.read()
 
 ext_modules = [
-    Extension(name='tulipy.lib',
-              sources=['libindicators/tiamalgamation.c', 'tulipy/lib/__init__.pyx'],
-              language='c',
-              include_dirs=['libindicators', 'tulipy/lib', np.get_include()],
+    Extension(
+        name='tulipy.lib',
+        language='c++',
+        sources=['tulipy/lib/__init__.pyx',
+                 'libindicators/tiamalgamation.c',
+                 'libindicators/pst_indicators/pst_indicators.cpp',
+                 'libindicators/pst_indicators/pst_manager.cpp'],
+        include_dirs=['libindicators', 'libindicators/pst_indicators', 'tulipy/lib', np.get_include()],
+        extra_compile_args=["-lm", "-std=c++14"],
+        #library_dirs=['tulipy'],
+        #libraries=['indicators'],
+        #extra_link_args=["-Wl,-rpath=."],
+        #extra_link_args=["-Wl,-rpath=/opt/anaconda3/lib/python3.8/site-packages/tulipy-0.4.0-py3.8-linux-x86_64.egg/tulipy"],
     )
 ]
 

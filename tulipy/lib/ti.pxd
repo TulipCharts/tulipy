@@ -46,3 +46,5 @@ cdef extern from "indicators.h":
 
     const ti_indicator_info * ti_find_indicator(const char * name)
 
+    int pst_ti_init(const char* id, const char* type, options_t options);
+

@@ -1,5 +1,7 @@
 build:
-	python setup.py build_ext --inplace
+	gcc -v
+	python3 --version
+	python3 setup.py build_ext --inplace
 
 clean:
 	rm -rf ./build ./dist \
@@ -8,8 +10,9 @@ clean:
 		   ./*.egg-info
 
 install:
-	python setup.py install
+	python3 setup.py install
+	ls -l /opt/anaconda3/lib/python3.8/site-packages/tulipy-0.4.0-py3.8-linux-x86_64.egg/tulipy/
 
-test: install
-	python tests/test.py
+test:
+	python3 tests/test.py
 

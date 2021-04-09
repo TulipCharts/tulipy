@@ -23,10 +23,24 @@
 
 # This file is generated. Do not modify directly.
 
+import sys
 from . import lib
 from .lib import TI_BUILD, InvalidOptionError
 
 TI_VERSION = lib.TI_VERSION.decode()
+
+def is_null_val(real):
+    return sys.float_info.max == real
+
+def pst_ti_init(pti_id, pti_type, options):
+    """
+    initialize a persistent indicator if necessary
+        id: user defined name of pst indicator instance, it is unique in global, such as "pst_ti_1"
+        type: pst indicator type, such as "pst_ti_rsi"
+        options: same as options of stateless indicator, such as "ti_rsi" options is effective for "pst_ti_rsi"
+        return: global instance no, same id corresponds to same no
+    """
+    return lib.pst_ti_init(pti_id, pti_type, options)
 
 
 def abs(real):
@@ -1007,6 +1021,20 @@ rsi.type = lib.rsi.type.decode()
 rsi.inputs = [x.decode() for x in lib.rsi.inputs]
 rsi.options = [x.decode() for x in lib.rsi.options]
 rsi.outputs = [x.decode() for x in lib.rsi.outputs]
+
+
+def pti_rsi(real, period):
+    """
+    Relative Strength Index in persistent version
+    """
+
+    return lib.pst_ti_rsi([real], [period])
+
+pti_rsi.full_name = lib.pst_ti_rsi.full_name.decode()
+pti_rsi.type = lib.pst_ti_rsi.type.decode()
+pti_rsi.inputs = [x.decode() for x in lib.pst_ti_rsi.inputs]
+pti_rsi.options = [x.decode() for x in lib.pst_ti_rsi.options]
+pti_rsi.outputs = [x.decode() for x in lib.pst_ti_rsi.outputs]
 
 
 def sin(real):

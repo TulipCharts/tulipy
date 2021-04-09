@@ -34,6 +34,9 @@ from libc.limits cimport INT_MAX
 import numpy as np
 cimport numpy as np
 
+import array
+from cpython cimport array
+
 cimport ti
 
 TI_VERSION = ti.TI_VERSION
@@ -44,6 +47,14 @@ class InvalidOptionError(ValueError):
 
 class InvalidInputError(ValueError):
     pass
+
+
+def pst_ti_init(id, type, options):
+    # cdef double[:] c_options = options # if options else [0.0]
+    option_list = options if options else [0.0]
+    cdef np.ndarray[np.float64_t, ndim=1, mode='c'] c_options = np.array(option_list, dtype=np.float64)
+    return ti.pst_ti_init(id.encode(), type.encode(), &c_options[0])
+
 
 cdef dict _type_names = {
     ti.TI_TYPE_OVERLAY:     b'overlay',
@@ -97,7 +108,12 @@ cdef class _Indicator:
         option_list = options if options else [0.0]
         cdef np.ndarray[np.float64_t, ndim=1, mode='c'] c_options = np.array(option_list, dtype=np.float64)
 
-        delta = self.info.start(&c_options[0])
+        # ORIGINAL: int delta = self.info.start(&c_options[0])
+        # MODIFIED by wyc: pti indicator output's length is equal to input's
+        cdef int delta = 0
+        if not self.info.name.startswith("pti_".encode()):
+            delta = self.info.start(&c_options[0])
+
         if min_input_len - delta <= 0:
             # This would cause self.info.indicator to return ti.TI_INVALID_OPTION, but there would
             # be a problem before we got there in creating the `outputs` np.ndarray below with a
@@ -131,6 +147,9 @@ cdef class _Indicator:
 
         return tuple(outputs)
 
+ 
+# TODO tid= 0
+# TODO abs = _Indicator(tid); tid +=1
 
 abs = _Indicator(0)
 
@@ -324,122 +343,124 @@ ppo = _Indicator(62)
 psar = _Indicator(63)
 
 
-pvi = _Indicator(64)
+pst_ti_rsi = _Indicator(64)
 
 
-qstick = _Indicator(65)
+pvi = _Indicator(65)
 
 
-roc = _Indicator(66)
+qstick = _Indicator(66)
 
 
-rocr = _Indicator(67)
+roc = _Indicator(67)
 
 
-round = _Indicator(68)
+rocr = _Indicator(68)
 
 
-rsi = _Indicator(69)
+round = _Indicator(69)
 
 
-sin = _Indicator(70)
+rsi = _Indicator(70)
 
 
-sinh = _Indicator(71)
+sin = _Indicator(71)
 
 
-sma = _Indicator(72)
+sinh = _Indicator(72)
 
 
-sqrt = _Indicator(73)
+sma = _Indicator(73)
 
 
-stddev = _Indicator(74)
+sqrt = _Indicator(74)
 
 
-stderr = _Indicator(75)
+stddev = _Indicator(75)
 
 
-stoch = _Indicator(76)
+stderr = _Indicator(76)
 
 
-stochrsi = _Indicator(77)
+stoch = _Indicator(77)
 
 
-sub = _Indicator(78)
+stochrsi = _Indicator(78)
 
 
-sum = _Indicator(79)
+sub = _Indicator(79)
 
 
-tan = _Indicator(80)
+sum = _Indicator(80)
 
 
-tanh = _Indicator(81)
+tan = _Indicator(81)
 
 
-tema = _Indicator(82)
+tanh = _Indicator(82)
 
 
-todeg = _Indicator(83)
+tema = _Indicator(83)
 
 
-torad = _Indicator(84)
+todeg = _Indicator(84)
 
 
-tr = _Indicator(85)
+torad = _Indicator(85)
 
 
-trima = _Indicator(86)
+tr = _Indicator(86)
 
 
-trix = _Indicator(87)
+trima = _Indicator(87)
 
 
-trunc = _Indicator(88)
+trix = _Indicator(88)
 
 
-tsf = _Indicator(89)
+trunc = _Indicator(89)
 
 
-typprice = _Indicator(90)
+tsf = _Indicator(90)
 
 
-ultosc = _Indicator(91)
+typprice = _Indicator(91)
 
 
-var = _Indicator(92)
+ultosc = _Indicator(92)
 
 
-vhf = _Indicator(93)
+var = _Indicator(93)
 
 
-vidya = _Indicator(94)
+vhf = _Indicator(94)
 
 
-volatility = _Indicator(95)
+vidya = _Indicator(95)
 
 
-vosc = _Indicator(96)
+volatility = _Indicator(96)
 
 
-vwma = _Indicator(97)
+vosc = _Indicator(97)
 
 
-wad = _Indicator(98)
+vwma = _Indicator(98)
 
 
-wcprice = _Indicator(99)
+wad = _Indicator(99)
 
 
-wilders = _Indicator(100)
+wcprice = _Indicator(100)
 
 
-willr = _Indicator(101)
+wilders = _Indicator(101)
 
 
-wma = _Indicator(102)
+willr = _Indicator(102)
 
 
-zlema = _Indicator(103)
+wma = _Indicator(103)
 
+
+zlema = _Indicator(104)
