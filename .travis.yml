@@ -81,3 +81,4 @@ env:
     - TWINE_USERNAME=__token__
     # Note: TWINE_PASSWORD is set to a PyPI API token in Travis settings
     - CIBW_SKIP="cp27-* cp35-* pp27-*"
+    - CIBW_ARCHS_MACOS="x86_64 universal2 arm64"
