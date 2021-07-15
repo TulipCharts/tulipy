@@ -1,4 +1,0 @@
-graft libindicators
-include tulipy/lib/ti.pxd
-include pyproject.toml
-include README.md LICENSE AUTHORS
