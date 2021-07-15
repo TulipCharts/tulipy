@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/cryptocoinserver/tulipy.svg?branch=master)](https://travis-ci.org/cryptocoinserver/tulipy)
+[![Build Status](https://travis-ci.com/cryptocoinserver/tulipy.svg?branch=master)](https://travis-ci.com/cryptocoinserver/tulipy)
 
 I forked the original repo to add support for 3.9.
 It's on pip. Use `pip install newtulipy`.
