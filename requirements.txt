@@ -1,2 +1,2 @@
-cython~=0.29.23
-numpy~=1.20.3 
+cython~=0.30.0
+numpy~=1.21.0
