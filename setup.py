@@ -16,13 +16,13 @@ ext_modules = [
 ]
 
 setup(
-    name='tulipy',
+    name='newtulipy',
     description='Financial Technical Analysis Indicator Library. Python bindings for https://github.com/TulipCharts/tulipindicators',
     long_description=long_description,
     long_description_content_type='text/markdown; charset=UTF-8',
-    version='0.4.0',
-    url='https://github.com/cirla/tulipy',
-    author='https://github.com/cirla/tulipy/blob/master/AUTHORS',
+    version='0.4.6.2',
+    url='https://github.com/cryptocoinserver/tulipy',
+    author='https://travis-ci.org/cryptocoinserver/tulipy/blob/master/AUTHORS',
     license='LGPL-3.0',
     cmdclass={'build_ext': build_ext},
     ext_modules=ext_modules,
@@ -36,7 +36,6 @@ setup(
         'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
         'Operating System :: OS Independent',
         'Programming Language :: Cython',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
         'Topic :: Office/Business :: Financial',
         'Topic :: Scientific/Engineering :: Information Analysis',

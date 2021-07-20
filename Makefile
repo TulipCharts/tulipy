@@ -1,5 +1,5 @@
 build:
-	python setup.py build_ext --inplace
+	python3 setup.py build_ext --inplace
 
 clean:
 	rm -rf ./build ./dist \
@@ -8,8 +8,8 @@ clean:
 		   ./*.egg-info
 
 install:
-	python setup.py install
+	python3 setup.py install
 
 test: install
-	python tests/test.py
+	python3 tests/test.py
 
